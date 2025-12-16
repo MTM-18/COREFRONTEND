@@ -1,0 +1,170 @@
+/* -------------------------------
+   GLOBAL DESIGN TOKENS (UTILITIES)
+   These use the core.* Tailwind colors
+   defined in tailwind.config.js
+-------------------------------- */
+
+/* Navbar background + blur */
+.nav-bg {
+    @apply bg-gradient-to-r from-core-brand to-core-accent dark:from-core-darkSurface dark:to-core-accent;
+}
+
+/* Navbar border color */
+.nav-border {
+    @apply border-core-lightBorder dark:border-core-darkBorder;
+}
+
+/* Default nav link style */
+.nav-link {
+    @apply text-sm font-medium transition-colors px-4 py-1.5;
+}
+
+/* Primary button style (brand) */
+.btn-primary {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-button bg-core-brand text-core-textLight hover:bg-core-brandDark text-sm font-medium transition-colors;
+}
+
+/* Secondary / outline button */
+.btn-secondary {
+    @apply inline-flex items-center justify-center px-4 py-2 rounded-button border border-core-lightBorder dark:border-core-darkBorder text-core-textDark dark:text-core-textLight hover:border-core-brand hover:text-core-brand dark:hover:border-core-brandLight dark:hover:text-core-brandLight text-sm font-medium transition-colors;
+}
+
+/* Card surface */
+.card-surface {
+    @apply bg-core-lightCard dark:bg-core-darkCard shadow-card rounded-card;
+}
+
+/* Muted text */
+.text-muted {
+    @apply text-core-textMuted;
+}
+
+/*Language switch pill*/
+.lang-switch {
+    @apply inline-flex items-center rounded-full bg-core-brand text-core-textLight text-xs overflow-hidden;
+}
+
+.lang-switch-option {
+    @apply px-4 py-1 cursor-pointer select-none transition-colors;
+}
+
+/* Active side (white with purple text) */
+.lang-switch-option-active {
+    @apply bg-core-lightBg text-core-brand;
+}
+
+.switch-root {
+    @apply inline-flex items-center rounded-full bg-core-brand text-core-textLight text-[11px] font-medium overflow-hidden;
+}
+
+.switch-option {
+    @apply flex-1 text-center px-4 py-1 cursor-pointer select-none transition-colors;
+}
+
+.switch-option-active {
+    @apply bg-core-brand text-core-lightBg;
+}
+
+.switch-option-inactive {
+    @apply bg-core-lightBg text-core-brand;
+}
+
+
+/* Layout shell to center content and limit max width */
+
+.layout-shell {
+    @apply w-full mx-auto px-4;
+}
+
+/* Footer gradient container */
+.footer-surface {
+    @apply w-full mx-auto text-core-textLight rounded-tl-footer bg-gradient-to-r from-core-brand to-core-accent dark:from-core-darkSurface dark:to-core-accent;
+}
+
+/* Footer inner spacing + grid */
+.footer-inner {
+    @apply py-8 md:py-10 grid gap-10 grid-cols-1 md:grid-cols-3 text-center place-items-center px-4;
+}
+
+/* Footer column titles */
+.footer-heading {
+    @apply font-semibold text-lg mb-3;
+}
+
+/* Footer body text */
+.footer-text {
+    @apply text-sm leading-relaxed;
+}
+
+/* Footer link list */
+.footer-list {
+    @apply space-y-2 text-sm;
+}
+
+/* Newsletter input row */
+.footer-newsletter-row {
+    @apply flex items-center gap-3 mt-3;
+}
+
+.footer-email-input {
+    @apply flex-1 px-3 py-2 rounded-button border border-core-lightBorder bg-core-lightBg text-core-textDark placeholder:text-core-textMuted;
+}
+
+/* Footer bottom row (copyright) */
+.footer-bottom {
+    @apply mt-6 pt-4 text-xs text-core-textMuted flex flex-col md:flex-row justify-between items-center gap-3;
+}
+
+
+
+/* Vision / Mission cards */
+.vm-card {
+    @apply relative card-surface pt-20 pb-10 px-8 flex flex-col items-center text-center overflow-visible rounded-card;
+}
+
+/* Top circular badge */
+.vm-badge {
+    @apply absolute -top-8 flex items-center justify-center h-16 w-16 rounded-full text-core-textLight shadow-card;
+}
+
+.vm-badge-vision {
+    @apply bg-gradient-to-br from-core-brand to-core-brandLight;
+}
+
+.vm-badge-mission {
+    @apply bg-gradient-to-br from-core-accent to-core-accentDark;
+}
+
+/* Small circle “arrow” on the side */
+.vm-arrow {
+    @apply absolute top-8 right-[-20px] h-12 w-12 rounded-full flex items-center justify-center text-core-textLight shadow-card;
+}
+
+.vm-arrow-vision {
+    @apply bg-core-brand;
+}
+
+.vm-arrow-mission {
+    @apply bg-core-accent;
+}
+
+/* Little pointed bottom */
+.vm-pointer {
+    @apply absolute left-1/2 bottom-[-14px] -translate-x-1/2 w-10 h-10 bg-core-lightCard dark:bg-core-darkCard rotate-45;
+}
+
+/* Number at bottom */
+.vm-index {
+    @apply mt-6 text-xs font-semibold tracking-[0.2em] text-core-textMuted;
+}
+
+.logo-hover-orange:hover {
+    filter: brightness(0) saturate(100%) invert(48%) sepia(83%) saturate(1674%) hue-rotate(-13deg) brightness(101%) contrast(96%);
+}
+
+/* optional: generic orbit style */
+.orbit-base {
+    border-radius: 9999px;
+    filter: blur(130px);
+
+}

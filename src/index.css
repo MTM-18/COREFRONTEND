@@ -1,0 +1,14 @@
+/* 1) Import custom CSS BEFORE Tailwind layers */
+@import "./styles/tokens.css";
+
+/* 2) Tailwind layers */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 3) Global styles */
+body {
+  @apply bg-core-lightBg text-core-textDark antialiased;
+  @apply dark:bg-core-darkBg dark:text-core-textLight;
+  margin: 0;
+}

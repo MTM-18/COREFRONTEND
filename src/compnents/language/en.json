@@ -1,0 +1,557 @@
+{
+    "nav": {
+        "home": "Home",
+        "product": "Core Pro",
+        "workspace": "Workspace",
+        "entrepreneurship": "Entrepreneurship",
+        "about": "About Us",
+        "contact": "Contact"
+    },
+    "hero": {
+        "eyebrow": "CORE ISTANBUL",
+        "title": "We design unique, innovative experiences beyond traditional programs.",
+        "subtitle": "CORE is a home for passionate founders, professionals, and learners. We combine mentorship, community, and real-world projects to help you grow faster than you thought possible."
+    },
+    "actions": {
+        "joinCore": "Join CORE",
+        "explorePrograms": "Explore programs"
+    },
+    "lang": {
+        "en": "EN",
+        "ar": "AR",
+        "toggle": "EN / AR"
+    },
+    "footer": {
+        "title": "Home of Passion",
+        "newsletterTitle": "Stay up to date with the latest news from Core Istanbul",
+        "newsletterPlaceholder": "Enter Your Email Here",
+        "newsletterButton": "Send",
+        "newsletterNote": "By registering to receive email messages, you agree to our privacy policy. Unsubscribe at any time.",
+        "servicesTitle": "Services",
+        "pagesTitle": "Pages",
+        "locationTitle": "Location",
+        "services": {
+            "program": "Entrepreneurship Program",
+            "corePro": "Core Pro",
+            "workspace": "Shared Workspace"
+        },
+        "location": {
+            "line1": "Yeni Bosna Merkez",
+            "line2": "29 Ekim Cd. No:11C D5/1",
+            "line3": "34197 Bahçelievler / Istanbul"
+        },
+        "officeEmail": "info@corebhub.com",
+        "officePhone": "+905526441592",
+        "copyright": "All rights reserved Core Istanbul - 2024"
+    },
+    "homePage": {
+        "aboutSection": {
+            "title": "About Core Istanbul",
+            "body": "Core Istanbul is an initiative by young youth in Turkey aiming to support youth entrepreneurship..."
+        },
+        "servicesSection": {
+            "title": "Our Services",
+            "subtitle": "Core Istanbul business hub offers programs for developing the entrepreneurship community and startups to transfer ideas into market.",
+            "cards": {
+                "program": {
+                    "title": "Entrepreneurship Program",
+                    "body": "A structured program that helps young people turn their ideas into real startups through mentorship, training, and hands-on projects."
+                },
+                "corePro": {
+                    "title": "Core Pro",
+                    "body": "Specialized workshops and events designed to equip Arab youth in Turkey with essential market skills, led by experienced professionals from major companies."
+                },
+                "workspace": {
+                    "title": "Shared Workspace",
+                    "body": "A modern co-working space that offers a productive environment, community, and networking opportunities for entrepreneurs and teams."
+                }
+            }
+        },
+        "newsSection": {
+            "title": "Latest News",
+            "more": "More",
+            "tagNew": "New",
+            "cards": {
+                "card1": {
+                    "title": "Launch of the First Incubation Program Application Form",
+                    "body": "Now you can start turning your idea into a real project operating in the market..."
+                },
+                "card2": {
+                    "title": "Core Istanbul Hosts New Entrepreneurship Workshop",
+                    "body": "A full-day workshop designed to equip young founders with practical tools and mentoring."
+                },
+                "card3": {
+                    "title": "New Partnerships with Regional Organizations",
+                    "body": "Core Istanbul expands its network to bring more opportunities and support for youth projects."
+                },
+                "card4": {
+                    "title": "Demo Day for Startup Cohort",
+                    "body": "Graduating teams present their projects to investors and ecosystem partners at Core Istanbul."
+                }
+            }
+        },
+        "testimonials": {
+            "title": "Testimonials",
+            "subtitle": "What leaders say about Core Istanbul",
+            "items": {
+                "yassen": {
+                    "quote": "This initiative is not limited to Turkey or Istanbul only, but will become a global model of work and initiative.",
+                    "name": "Mr. Yassen Aqtai",
+                    "role": "Strategic Advisor"
+                },
+                "saad": {
+                    "quote": "Core Istanbul is a great monumental work; this group knows no impossibilities. Faith, ambition, hard work, patience and learning open the horizons of the universe.",
+                    "name": "Dr. Saad Al-Barrak",
+                    "role": "International Businessman & Venture Capitalist"
+                },
+                "jammal": {
+                    "quote": "We urge the private sector to support this pioneering project for its importance in providing job opportunities and breaking the cycle of poverty.",
+                    "name": "Mr. Jamal Al-Nouri",
+                    "role": "Chairman, Abdullah Al-Nouri Charity Association"
+                },
+                "gassan": {
+                    "quote": "This transition is unique in empowering people and alleviating their suffering. It is a remarkable example that deserves attention and development.",
+                    "name": "Mr. Ghassan Zouaoui",
+                    "role": "Ambassador of Kuwait"
+                },
+                "abdullah": {
+                    "quote": "Our participation in opening Core Istanbul aims to empower youth economically and provide them with a broader workspace in Turkey.",
+                    "name": "Mr. Abdullah Al-Mutouq",
+                    "role": "UN Advisor & Board Chairman, World Charity Authority"
+                }
+            }
+        }
+    },
+    "aboutPage": {
+        "vision": {
+            "title": "Our Vision",
+            "body": "A center for young entrepreneurship in Turkey, with incubators, accelerators, and an investor network across several countries in the Middle East and North Africa."
+        },
+        "mission": {
+            "title": "Our Mission",
+            "body": "Contributing to the economical empowerment in Türkiye and Arab countries."
+        },
+        "valuesSection": {
+            "title": "Our Values",
+            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training",
+            "items": {
+                "partnership": {
+                    "title": "Partnership",
+                    "body": "We believe in the importance of collaboration and partnership with all stakeholders to achieve mutual and sustainable success."
+                },
+                "quality": {
+                    "title": "Quality",
+                    "body": "We aim to provide the best services and products to our clients and partners."
+                },
+                "innovation": {
+                    "title": "Innovation",
+                    "body": "We consider innovation the core of all our work, always striving for excellence and development."
+                },
+                "institutionalism": {
+                    "title": "Institutionalism",
+                    "body": "We are distinguished by a spirit of institution and dedication, working as one team towards achieving our common goals."
+                },
+                "trust": {
+                    "title": "Trust",
+                    "body": "We build strong relationships based on trust and integrity with all our clients and partners."
+                },
+                "efficiency": {
+                    "title": "Efficiency",
+                    "body": "We strive to achieve efficiency and effectiveness in all our operations and services."
+                }
+            }
+        },
+        "team": {
+            "title": "Team",
+            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training",
+            "abdulrahman": {
+                "name": "Abdulrahman Al-Esawy",
+                "role": "Executive Director"
+            },
+            "muhammed": {
+                "name": "Muhammed Adiloğlu",
+                "role": "Head of Entrepreneurship"
+            },
+            "mert": {
+                "name": "Mert Galyon",
+                "role": "Investment Associate"
+            },
+            "abdullah": {
+                "name": "Abdullah Ashour",
+                "role": "Head of Programs"
+            },
+            "albaraa": {
+                "name": "Albaraa Al-soudani",
+                "role": "Head of Marketing"
+            },
+            "khaleel": {
+                "name": "Abdullah Khaleel",
+                "role": "Accountant"
+            },
+            "lara": {
+                "name": "Lara Saad",
+                "role": "PR and Projects Coordinator"
+            },
+            "omar": {
+                "name": "Omar Al-Haddad",
+                "role": "Entrepreneurship Coordinator"
+            },
+            "habiba": {
+                "name": "Habiba Hisham",
+                "role": "Graphic Designer"
+            },
+            "ahmed": {
+                "name": "Ahmed Essam",
+                "role": "Motion Graphics and Video Editor"
+            },
+            "hamza": {
+                "name": "Hamza Al-Ahmedi",
+                "role": "Software Intern"
+            },
+            "karam": {
+                "name": "Karam Almoula",
+                "role": "Photographer"
+            },
+            "nazir": {
+                "name": "Nazire",
+                "role": "Service Employee"
+            }
+        },
+        "donors": {
+            "title": "Donors",
+            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training",
+            "list": {
+                "namaa": {
+                    "name": "Namaa Charity"
+                },
+                "nouri": {
+                    "name": "Sheikh Abdullah Al Nouri Charity Society"
+                }
+            }
+        },
+        "gallery": {
+            "title": "Photo Library",
+            "subtitle": "A glimpse of our programs, trainings, and shared workspace.",
+            "items": {
+                "programming": {
+                    "label": "Programming Labs"
+                },
+                "ecommerce": {
+                    "label": "E-commerce Training"
+                },
+                "marketing1": {
+                    "label": "Marketing Workshop I"
+                },
+                "marketing2": {
+                    "label": "Marketing Workshop II"
+                },
+                "design": {
+                    "label": "Design Sessions"
+                },
+                "interior": {
+                    "label": "Interior Design Studio"
+                },
+                "accounting": {
+                    "label": "Financial Accounting"
+                },
+                "coworking": {
+                    "label": "Shared Workspace"
+                },
+                "vocational": {
+                    "label": "Vocational Training Programs"
+                },
+                "entrepreneurship": {
+                    "label": "Entrepreneurship Program"
+                }
+            }
+        }
+    },
+    "entrepreneurshipPage": {
+        "entrepreneurship": {
+            "title": "Entrepreneurship Program",
+            "description": "Core Istanbul Business Hub has specialized programs in developing the entrepreneurship community and startups.",
+            "videoTitle": "Entrepreneurship Program - Core Istanbul",
+            "videoUrl": "https://www.youtube.com/embed/Vyoz4lykirE",
+            "includesTitle": "The program includes",
+            "items": {
+                "incubation": {
+                    "description": "Incubation programs for startups that transform them from ideas into market-ready companies capable of achieving breakthroughs, connecting them with experts and investors."
+                },
+                "acceleration": {
+                    "description": "Acceleration programs for startups in the market to develop their operations and expansions to gain larger market shares, connecting them with experts and investors."
+                },
+                "investors": {
+                    "description": "A network of investors from within and outside Türkiye ready to invest in promising startups."
+                },
+                "events": {
+                    "description": "Conferences and meetings that bring together startups with investors and market experts to build strong relationships and successful investment opportunities."
+                }
+            }
+        },
+        "incubation": {
+            "intro": "Incubation programs for startups play a pioneering role in achieving economic empowerment for youth in the Arab world. Today, they are considered among the most important tools for mobilizing resources, linking them with opportunities and investment, and subsequently economic development.",
+            "title": "The first program of its kind in Turkey",
+            "description": "The incubation program for startups launched by Core Istanbul is the first of its kind in Turkey, targeting 20 startups (Turkish – Arab). Over 6 months, it works on their development with market experts, then connects them with investors and continues with them to achieve market breakthroughs and success.",
+            "imgAlt": "Startup incubation program at Core Istanbul"
+        },
+        "incubationStages": {
+            "title": "Incubation Program Stages",
+            "subtitle": "Core Istanbul Business Hub offers advanced programs specialized in vocational training.",
+            "steps": {
+                "application": {
+                    "title": "Application for Incubation",
+                    "description": "This stage aims to attract incubable projects through an electronic form that helps us understand the project idea and the founders. Then, 50 projects are selected from the submitted ones to advance to the second stage of entering Core Istanbul’s incubation."
+                },
+                "camp": {
+                    "title": "Training Camp",
+                    "description": "A two-day training camp includes intensive training to complete the presentations to be shown to the judging panel, in order to filter them down to 20 projects that will enter the incubation program."
+                },
+                "incubation": {
+                    "title": "Incubation",
+                    "description": "A comprehensive six-month incubation program that includes intensive workshops to help project owners prepare their business model and get ready for market entry."
+                },
+                "judging": {
+                    "title": "Final Judging Day",
+                    "description": "Projects present their final presentations to the judging panel to announce the winning, investable projects."
+                },
+                "post": {
+                    "title": "Post-Incubation",
+                    "description": "Core Istanbul connects successful graduating projects with its network of investors while continuing to provide advisory and guidance support."
+                }
+            }
+        },
+        "applicationPrograms": {
+            "title": "Application for Incubation",
+            "subtitle": "Core Istanbul Business Hub offers advanced programs specialized in vocational training.",
+            "items": {
+                "one": {
+                    "title": "Incubation Program One",
+                    "description": "Core Istanbul Business Hub offers advanced programs specialized in vocational training."
+                },
+                "two": {
+                    "title": "Incubation Program Two",
+                    "description": "Core Istanbul Business Hub offers advanced programs specialized in vocational training."
+                },
+                "three": {
+                    "title": "Incubation Program Three",
+                    "description": "Core Istanbul Business Hub offers advanced programs specialized in vocational training."
+                }
+            }
+        },
+        "faq": {
+            "title": "Frequently Asked Questions",
+            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training.",
+            "items": {
+                "whatIsIncubation": {
+                    "q": "What is an incubation program?",
+                    "a": "An incubation program is an educational or social initiative aimed at supporting vulnerable or needy individuals or groups by providing support and assistance. This support can include guidance, training, financial aid, or any other type of assistance designed to help individuals improve and develop in their lives or in a specific field."
+                },
+                "youthBenefit": {
+                    "q": "How can youth benefit from an incubation program?",
+                    "a": "Youth can benefit from an incubation program by receiving advice, training, financial support, networking opportunities, and inspiration to develop their skills and achieve their goals."
+                },
+                "howToRegister": {
+                    "q": "How can I register for an incubation program?",
+                    "a": "You can usually register for an incubation program by contacting the organizing body directly or through their website if this option is available."
+                },
+                "isFree": {
+                    "q": "Is the program free?",
+                    "a": "The cost policies for incubation programs vary based on the organizing institution and its available resources. Some incubation programs may be completely free for participants, while others may charge a nominal fee or participation costs."
+                },
+                "criteria": {
+                    "q": "What are the admission criteria for the program?",
+                    "a": "Admission criteria include interest and motivation, qualifications and experience, commitment, merit, and alignment with the program's goals and values."
+                },
+                "balanceStudy": {
+                    "q": "Can I balance between my studies or work with an incubation program?",
+                    "a": "Yes, incubation programs often offer flexibility for participants to balance their studies or work alongside participating in the program. Sessions may be organized to fit participants' schedules, and there may be options for remote participation or flexible timings."
+                }
+            }
+        }
+    },
+    "coreProPage": {
+        "vocationalHero": {
+            "title": "We design unique, innovative experiences beyond traditional programs",
+            "subtitle": "Core Pro is a vocational training experience that connects youth with real market opportunities through expert-led programs and hands-on practice.",
+            "videoTitle": "Core Pro – Vocational Training Program",
+            "videoUrl": "https://www.youtube.com/embed/Dgm414LAHvs"
+        },
+        "vocationalIntro": {
+            "title": "Core Istanbul business hub offers advanced programs specialized in vocational training",
+            "subtitle": "Core Pro designs structured learning journeys that blend technical skills with real business exposure.",
+            "tagline": "Targeting Turkish - Arab - foreign youth in Turkey"
+        },
+        "empoweringYouth": {
+            "title": "Empowering Youth",
+            "heading": "Core focuses on empowering youth with market-ready skills across various sectors",
+            "body": "These programs are designed and delivered by expert trainers and professionals from leading companies to build job capacities that contribute to modern economic development.",
+            "imgAlt": "Young participants in a vocational training workshop"
+        },
+        "trainingFields": {
+            "title": "Training Fields",
+            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training.",
+            "items": {
+                "photography": "Photography",
+                "videoEditing": "Video Editing",
+                "graphicDesign": "Graphic Design",
+                "digitalMarketing": "Digital Marketing",
+                "financialAccounting": "Financial Accounting",
+                "secretarial": "Secretarial and Office Management",
+                "programming": "Programming",
+                "videoShooting": "Video Shooting",
+                "ecommerce": "E-commerce",
+                "dataAnalysis": "Data Analysis"
+            }
+        },
+        "vocationalStages": {
+            "title": "Core Pro Stages",
+            "subtitle": "A structured journey that moves youth from training into real employment opportunities.",
+            "steps": {
+                "recruitTrainers": {
+                    "title": "Recruiting expert trainers in the market",
+                    "description": "Selecting specialized trainers and practitioners from leading companies to design and deliver the program."
+                },
+                "recruitYouth": {
+                    "title": "Reaching targeted Arab youth",
+                    "description": "Announcing and promoting the program, screening applications, and selecting motivated participants to join."
+                },
+                "implementProgram": {
+                    "title": "Implementing the training program",
+                    "description": "Delivering the vocational training program through interactive workshops, projects, and practical assignments."
+                },
+                "employment": {
+                    "title": "Employment and networking",
+                    "description": "Supporting graduates with job matching, internships, and networking opportunities with partner companies."
+                }
+            }
+        },
+        "vocationalFaq": {
+            "title": "Core Pro Stages",
+            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training.",
+            "items": {
+                "whatIsProgram": {
+                    "q": "What is the Vocational Training Program?",
+                    "a": "The Vocational Training Program is an educational or training program designed to equip individuals with the skills and knowledge necessary to competently practice a particular profession. These programs are designed to meet the needs of the labor market and industry requirements, and are often offered through educational institutions or specialized training centers."
+                },
+                "youthBenefit": {
+                    "q": "How can young people benefit from the Vocational Training Program?",
+                    "a": "Young people can benefit from the Vocational Training Program by gaining skills, improving job opportunities, preparing for professional challenges, building a network of relationships, and defining a career path."
+                },
+                "howToRegister": {
+                    "q": "How can I register for the Vocational Training Program?",
+                    "a": "You can register for the Vocational Training Program by filling out the registration form and submitting the required documents to the program provider."
+                },
+                "isFree": {
+                    "q": "Is the program free?",
+                    "a": "Whether the Vocational Training Program is free or requires fees depends on the policy of the program provider. Some programs may be completely free while others may require registration fees or training costs."
+                },
+                "criteria": {
+                    "q": "What are the admission criteria for the program?",
+                    "a": "The admission criteria for the Vocational Training Program vary depending on the program provider and the required specialization, and may include minimum education, required professional experience, passing evaluation tests, or personal interviews."
+                },
+                "balance": {
+                    "q": "Can I balance my studies or work with the Vocational Training Program?",
+                    "a": "Yes, in many cases, you can balance your current studies or work with the Vocational Training Program, depending on your personal arrangements and the flexibility of the program and the provider. Some institutions offer training programs at flexible times, such as evenings or online, allowing you to balance study and work."
+                }
+            },
+            "ctaText": "Do you have another question? Send it here."
+        }
+    },
+    "workspacePage": {
+        "hero": {
+            "title": "Welcome to Core Istanbul Space",
+            "videoTitle": "Welcome to Core Istanbul",
+            "videoUrl": "https://www.youtube.com/embed/lERvd_C6ySY"
+        },
+        "whyChoose": {
+            "title": "Why Choose Core Istanbul Space?",
+            "subtitle": "Core Istanbul offers a creative and integrated work environment designed for entrepreneurs, teams, and youth-focused initiatives.",
+            "items": {
+                "creativeEnvironment": "Creative and Integrated Work Environment",
+                "networking": "Networking and Building Relationships",
+                "easyAccess": "Easy Access",
+                "events": "Participate in Events"
+            }
+        },
+        "spaces": {
+            "shared": {
+                "title": "Shared Workspace",
+                "description": "A shared and creative workspace for companies and individuals, featuring 60 desks for building expertise and relationships.",
+                "imgAlt": "Shared workspace at Core Istanbul"
+            },
+            "meeting": {
+                "title": "Meeting Rooms",
+                "description": "Core Istanbul offers two meeting rooms in its creative environment, fully equipped, providing comfort and privacy, accommodating 4–12 people.",
+                "imgAlt": "Meeting room at Core Istanbul"
+            },
+            "training": {
+                "title": "Training Rooms",
+                "description": "Dedicated training rooms for events, conferences, and training sessions, accommodating 40–80 people.",
+                "imgAlt": "Training room at Core Istanbul"
+            },
+            "offices": {
+                "title": "Private Offices",
+                "description": "Core Istanbul offers 10 offices, fully equipped with essential supplies for entrepreneurs, accommodating 3–8 people.",
+                "imgAlt": "Private office at Core Istanbul"
+            },
+            "cafe": {
+                "title": "Business Cafe",
+                "description": "Core Istanbul offers a friendly space for young people by providing a specially designed café, serving hot and cold drinks with quick snacks, and seating for 30 people.",
+                "imgAlt": "Business cafe at Core Istanbul"
+            },
+            "tags": {
+                "highSpeedInternet": "High-Speed Internet",
+                "creativeSpaces": "Creative Spaces",
+                "hotDrinks": "Hot Drinks",
+                "laserPrinting": "Laser Printing Services",
+                "bigTv": "Big TV Display Screen",
+                "whiteboard": "Whiteboard",
+                "technicalSupport": "Technical Support",
+                "logisticalSupport": "Logistical Support",
+                "hotColdDrinks": "Hot & Cold Drinks",
+                "snacks": "Snacks",
+                "youthFriendly": "Youth-Friendly Atmosphere"
+            }
+        }
+    },
+    "contactPage": {
+        "intro": {
+            "title": "Contact Us",
+            "subtitle": "If you need assistance or have any questions, we are here for you."
+        },
+        "cards": {
+            "phone": {
+                "label": "Phone",
+                "primary": "+90 552 644 1592",
+                "secondary": "Call Us"
+            },
+            "hours": {
+                "label": "Working Hours",
+                "primary": "Monday to Friday",
+                "secondary": "10AM - 6PM"
+            },
+            "email": {
+                "label": "Email",
+                "primary": "info@corebhub.com",
+                "secondary": "Contact Us"
+            }
+        },
+        "map": {
+            "title": "Let's drink a cup of coffee together",
+            "subtitle": "The Core Istanbul business hub space is located in Istanbul – Yenibosna.",
+            "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.344938993721!2d28.826297576547506!3d41.00277231962856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa35afcb42f29%3A0xdd269a6c9d42a3e0!2s29%20Ekim%20Cd.%2011%20C%20D%3A51%2C%20Yenibosna%20Merkez%2C%2034197%20Bah%C3%A7elievler%2F%C4%B0stanbul!5e0!3m2!1sen!2str!4v1700000000000!5m2!1sen!2str"
+        },
+        "form": {
+            "title": "We would be happy to hear from you",
+            "subtitle": "Do you have any questions or comments? Send us a message and we will respond within 24 hours.",
+            "phonePlaceholder": "Phone Number",
+            "namePlaceholder": "Name",
+            "emailPlaceholder": "Email",
+            "topicPlaceholder": "Topic",
+            "messagePlaceholder": "How can we help you?",
+            "submitLabel": "Send",
+            "sendingLabel": "Sending...",
+            "successFallback": "Thank you for your message! We will get back to you soon."
+        }
+    }
+}
