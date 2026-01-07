@@ -1,7 +1,7 @@
 {
     "nav": {
         "home": "Home",
-        "product": "Core Pro",
+        "product": "Programs",
         "workspace": "Workspace",
         "entrepreneurship": "Entrepreneurship",
         "about": "About Us",
@@ -44,12 +44,12 @@
             "workspace": "Shared Workspace"
         },
         "location": {
-            "line1": "Yeni Bosna Merkez",
-            "line2": "29 Ekim Cd. No:11C D5/1",
-            "line3": "34197 Bahçelievler / Istanbul"
+            "line1": "Mevlana, Evliya Çelebi Cd.",
+            "line2": "İnciler Çarşısı B Girişi, No:4/55,",
+            "line3": "34515 Esenyurt/İstanbul"
         },
         "officeEmail": "info@corebhub.com",
-        "officePhone": "+905526441592",
+        "officePhone": "+905439634405",
         "copyright": "All rights reserved Core Istanbul - 2024"
     },
     "homePage": {
@@ -169,30 +169,31 @@
         "valuesSection": {
             "title": "Our Sections",
             "subtitle": "",
+            "flipHint": "",
             "items": {
-                "partnership": {
-                    "title": "CorePro",
-                    "body": ""
+                "corePro": {
+                    "title": "Technical & Vocational Qualification",
+                    "body": "• Empowers youth with essential vocational and technical skills demanded by the job market.\n• Focuses on hands-on, practical training across diverse fields.\n• Aims to boost work readiness and improve employment opportunities."
                 },
-                "quality": {
-                    "title": "Core Academy",
-                    "body": ""
+                "coreAcademy": {
+                    "title": "Advanced Technical & Vocational Qualification",
+                    "body": "• Offers advanced specialized programs aligned with modern sectors.\n• Focuses on cutting-edge technologies and high-level competencies.\n• Prepares talents to compete in local and regional markets."
                 },
-                "innovation": {
-                    "title": "Core Ventures Lab",
-                    "body": ""
+                "coreVentures": {
+                    "title": "Entrepreneurship",
+                    "body": "• Supports entrepreneurs in turning ideas into scalable ventures.\n• Provides incubation, acceleration, and business model development programs.\n• Helps build sustainable startups with real economic impact."
                 },
-                "institutionalism": {
-                    "title": "Core Podcast",
-                    "body": ""
+                "corePodcast": {
+                    "title": "Core Talk Podcast",
+                    "body": "• A knowledge platform highlighting entrepreneurship, innovation, and success stories.\n• Hosts experts and founders to share real-world experience.\n• Spreads awareness and inspires an entrepreneurial culture."
                 },
-                "trust": {
-                    "title": "Core Intern",
-                    "body": ""
+                "coreIntern": {
+                    "title": "Internship & Training",
+                    "body": "• Provides practical internships and professional immersion inside companies and institutions.\n• Connects beneficiaries with the labor market through direct experience.\n• Helps bridge the gap between education and real work."
                 },
-                "efficiency": {
-                    "title": "Core Consulting",
-                    "body": ""
+                "coreConsulting": {
+                    "title": "Shared Workspace",
+                    "body": "• A flexible, well-equipped working environment for entrepreneurs and freelancers.\n• Encourages collaboration, knowledge exchange, and professional networking.\n• Supports productivity and innovation within a complete entrepreneurial community."
                 }
             }
         },
@@ -253,7 +254,7 @@
             }
         },
         "donors": {
-            "title": "Donors",
+            "title": "Donors and Partners",
             "subtitle": "",
             "list": {
                 "namaa": {
@@ -263,13 +264,13 @@
                     "name": "Abdullah Al-Nouri Charity"
                 },
                 "dhiaAcademy": {
-                    "name": "Dhia Academy"
+                    "name": "Dea Academy"
                 },
                 "islamicDevelopmentBank": {
                     "name": "Islamic Development Bank"
                 },
                 "qatarAlkhairiah": {
-                    "name": "Qatar Alkhairiah"
+                    "name": "Qatar Charity"
                 },
                 "spark": {
                     "name": "Spark"
@@ -717,7 +718,7 @@
         "cards": {
             "phone": {
                 "label": "Phone",
-                "primary": "+90 552 644 1592",
+                "primary": "+90 543 963 44 05",
                 "secondary": "Call Us"
             },
             "hours": {
@@ -732,8 +733,8 @@
             }
         },
         "map": {
-            "title": "Let's drink a cup of coffee together",
-            "subtitle": "The Core Istanbul business hub space is located in Istanbul – Yenibosna.",
+            "title": "Find us here",
+            "subtitle": "The Core Istanbul business hub space is located in Istanbul – Esenyurt.",
             "embedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.344938993721!2d28.826297576547506!3d41.00277231962856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa35afcb42f29%3A0xdd269a6c9d42a3e0!2s29%20Ekim%20Cd.%2011%20C%20D%3A51%2C%20Yenibosna%20Merkez%2C%2034197%20Bah%C3%A7elievler%2F%C4%B0stanbul!5e0!3m2!1sen!2str!4v1700000000000!5m2!1sen!2str"
         },
         "form": {

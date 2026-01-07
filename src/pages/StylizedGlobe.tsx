@@ -25,10 +25,10 @@ type Branch = {
 };
 
 const BRANCHES: Branch[] = [
-    { id: "istanbul", label: "Istanbul", countryName: "Turkey", lat: 41.0082, lng: 28.9784, route: "/home" },
-    { id: "aleppo", label: "Aleppo", countryName: "Syria", lat: 36.2021, lng: 38.0, route: "/branch/aleppo" },
-    { id: "damscus", label: "Damascus", countryName: "Syria", lat: 33.5138, lng: 36.2765, route: "/branch/damscus" },
-    { id: "diyala", label: "Diyala", countryName: "Iraq", lat: 33.7733, lng: 45.149, route: "/branch/diyala" }
+    { id: "istanbul", label: "Core Istanbul", countryName: "Turkey", lat: 41.0082, lng: 28.9784, route: "/home" },
+    { id: "aleppo", label: "Core Aleppo ", countryName: "Syria", lat: 36.2021, lng: 38.0, route: "/branch/aleppo" },
+    { id: "damscus", label: "Core Damascus", countryName: "Syria", lat: 33.5138, lng: 36.2765, route: "/branch/damscus" },
+    { id: "diyala", label: "Core Diyala", countryName: "Iraq", lat: 33.7733, lng: 45.149, route: "/branch/diyala" }
 ];
 
 function parseRgb(rgb: string) {
@@ -67,6 +67,19 @@ export default function StylizedGlobe() {
         typeof window !== "undefined" ? window.innerWidth < 1050 : false
     );
 
+    // ✅ Coming soon modal state
+    const [comingSoon, setComingSoon] = useState<Branch | null>(null);
+    const closeComingSoon = useCallback(() => setComingSoon(null), []);
+
+    useEffect(() => {
+        if (!comingSoon) return;
+        const onKey = (e: KeyboardEvent) => {
+            if (e.key === "Escape") closeComingSoon();
+        };
+        window.addEventListener("keydown", onKey);
+        return () => window.removeEventListener("keydown", onKey);
+    }, [comingSoon, closeComingSoon]);
+
     const globeRef = useRef<any>(null);
     const ribbonsRef = useRef<Array<{ mesh: THREE.Mesh; spin: number }>>([]);
     const haloRef = useRef<THREE.Mesh | null>(null);
@@ -79,14 +92,14 @@ export default function StylizedGlobe() {
 
     const [brandCss, setBrandCss] = useState({
         purple: "rgb(106, 27, 154)", // fallback matches your tailwind config core.brand
-        orange: "rgb(243, 123, 39)"  // fallback matches your tailwind config core.accent
+        orange: "rgb(243, 123, 39)" // fallback matches your tailwind config core.accent
     });
 
     useLayoutEffect(() => {
         const purple = brandProbeRef.current ? getComputedStyle(brandProbeRef.current).color : null;
         const orange = accentProbeRef.current ? getComputedStyle(accentProbeRef.current).color : null;
 
-        setBrandCss(prev => ({
+        setBrandCss((prev) => ({
             purple: purple || prev.purple,
             orange: orange || prev.orange
         }));
@@ -101,8 +114,8 @@ export default function StylizedGlobe() {
         let mounted = true;
 
         fetch(WORLD_TOPO)
-            .then(r => r.json())
-            .then(topology => {
+            .then((r) => r.json())
+            .then((topology) => {
                 if (!mounted) return;
                 const gj = topojson.feature(topology, (topology as any).objects.countries) as any;
                 setPolys(gj.features || []);
@@ -166,7 +179,7 @@ export default function StylizedGlobe() {
 
     // softer oranges for non-branch
     const orangePalette = useMemo(() => {
-        return [0.75, 0.65, 0.55, 0.45, 0.35].map(t => mixRgb(brandCss.orange, "rgb(255,255,255)", t));
+        return [0.75, 0.65, 0.55, 0.45, 0.35].map((t) => mixRgb(brandCss.orange, "rgb(255,255,255)", t));
     }, [brandCss.orange]);
 
     const nonBranchColorFor = useCallback(
@@ -234,7 +247,18 @@ export default function StylizedGlobe() {
                 document.body.style.cursor = "grab";
             };
 
-            label.onclick = () => navigate(d.route);
+            // ✅ Istanbul navigates, others show "Coming soon"
+            label.onclick = (ev: MouseEvent) => {
+                ev.preventDefault();
+                ev.stopPropagation();
+
+                if (d.id === "istanbul") {
+                    navigate(d.route);
+                    return;
+                }
+
+                setComingSoon(d);
+            };
 
             wrap.appendChild(label);
             return wrap;
@@ -333,8 +357,6 @@ export default function StylizedGlobe() {
         };
     }, [brandCss.orange, brandCss.purple, polys.length]);
 
-
-
     return (
         <div className="relative w-full h-[100dvh] overflow-hidden" style={{ background: bgGradient }}>
             {/* Tailwind probes (hidden) */}
@@ -350,9 +372,36 @@ export default function StylizedGlobe() {
             <div className="absolute top-4 left-5 z-20 flex items-center gap-3">
                 <img src={coreLogo} alt="Core" className="h-9 w-auto" />
                 <span className="rounded-full px-3 py-2 text-[12px] font-semibold text-white border border-white/15 bg-black/50 backdrop-blur-md">
-                    Click a label to enter a branch
+                    Istanbul opens now • others coming soon
                 </span>
             </div>
+
+            {/* ✅ Coming soon modal */}
+            {comingSoon && (
+                <div
+                    className="absolute inset-0 z-[40] grid place-items-center bg-black/60 backdrop-blur-sm"
+                    onClick={closeComingSoon}
+                >
+                    <div
+                        className="w-[min(92vw,420px)] rounded-2xl border border-white/15 bg-black/70 p-5 text-white shadow-2xl"
+                        onClick={(e) => e.stopPropagation()}
+                        style={{ boxShadow: `0 0 40px ${rgbaFromCssColor(brandCss.purple, 0.45)}` }}
+                    >
+                        <div className="text-[12px] font-semibold tracking-wide text-white/65">Branch</div>
+                        <div className="mt-1 text-[22px] font-extrabold leading-tight">{comingSoon.label}</div>
+                        <div className="mt-2 text-sm text-white/80">Coming soon.</div>
+
+                        <div className="mt-5 flex items-center justify-end gap-2">
+                            <button
+                                onClick={closeComingSoon}
+                                className="rounded-xl px-4 py-2 text-sm font-semibold border border-white/15 bg-white/10 hover:bg-white/15 transition"
+                            >
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* loading */}
             {loading && (

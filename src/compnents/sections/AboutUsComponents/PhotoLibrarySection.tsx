@@ -40,7 +40,7 @@ export default function PhotoLibrarySection() {
     );
 
     return (
-        <section className="py-12 md:py-16">
+        <section className="py-10 md:py-10">
             <div className="layout-shell mx-auto space-y-8">
                 {/* Heading */}
                 <div className="space-y-2">

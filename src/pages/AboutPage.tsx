@@ -24,13 +24,14 @@ export default function AboutPage() {
 
                         <OurSectionsTable />
                     </section>
-                    <section className="fade-up">
 
-                        <TeamSection />
-                    </section>
                     <section className="fade-up">
 
                         <DonorsSection />
+                    </section>
+                    <section className="fade-up">
+
+                        <TeamSection />
                     </section>
                     <section className="fade-up">
 

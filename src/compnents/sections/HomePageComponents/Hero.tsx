@@ -3,11 +3,15 @@ import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import HeroPhoto from "../../../assets/display/1.webp";
+import HeroPhoto from "../../../assets/display/11.png";
+import HeroPhoto2 from "../../../assets/display/22.png";
+import HeroPhoto3 from "../../../assets/display/33.png";
+import HeroPhoto4 from "../../../assets/display/44.png";
+import HeroPhoto5 from "../../../assets/display/55.png";
+
 import Vector1 from "../../../assets/icons/PatternCard6 1.svg";
 
 const LEFT_PAD = 10;
-
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +19,15 @@ export default function Hero() {
     const { t, i18n } = useTranslation();
     const root = useRef<HTMLElement | null>(null);
     const headlineRef = useRef<HTMLHeadingElement | null>(null);
+
+    // ✅ refs for the SVG <image> nodes (one per tile)
+    const tileImageRefs = useRef<(SVGImageElement | null)[]>([]);
+
+    // ✅ your 5 hero photos (synced with titles)
+    const HERO_PHOTOS = useMemo(
+        () => [HeroPhoto, HeroPhoto2, HeroPhoto3, HeroPhoto4, HeroPhoto5],
+        []
+    );
 
     const TITLES = useMemo(
         () => [
@@ -70,10 +83,19 @@ export default function Hero() {
     }, [baseTiles]);
 
     const tiles = useMemo(() => {
-        return baseTiles.map((r) =>
-            mirror ? { ...r, x: VB_W - (r.x + r.w) } : r
-        );
+        return baseTiles.map((r) => (mirror ? { ...r, x: VB_W - (r.x + r.w) } : r));
     }, [baseTiles, mirror]);
+
+    // ✅ helper: set ALL tile images to a new photo (keeps shape/layout untouched)
+    const setHeroPhotoForAllTiles = (src: string) => {
+        tileImageRefs.current.forEach((node) => {
+            if (!node) return;
+            // modern
+            node.setAttribute("href", src);
+            // compatibility
+            node.setAttributeNS("http://www.w3.org/1999/xlink", "href", src);
+        });
+    };
 
     // Reveal + scroll motion
     useLayoutEffect(() => {
@@ -121,7 +143,7 @@ export default function Hero() {
         return () => ctx.revert();
     }, [i18n.language, mirror]);
 
-    // ✅ First approach: single headline that cycles titles
+    // ✅ headline + hero image shuffle AT THE SAME TIME
     useLayoutEffect(() => {
         const el = headlineRef.current;
         if (!el) return;
@@ -129,30 +151,39 @@ export default function Hero() {
         const prefersReduced =
             window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
 
-        let i = 0;
-        el.textContent = TITLES[0] ?? "";
+        const CYCLE_LEN = Math.min(TITLES.length, HERO_PHOTOS.length);
 
-        if (prefersReduced || TITLES.length <= 1) return;
+        let i = 0;
+
+        // set initial
+        el.textContent = TITLES[0] ?? "";
+        setHeroPhotoForAllTiles(HERO_PHOTOS[0] ?? "");
+
+        if (prefersReduced || CYCLE_LEN <= 1) return;
+
+        const tileImgs = tileImageRefs.current.filter(Boolean) as SVGImageElement[];
 
         const tl = gsap.timeline({ repeat: -1 });
 
         const FADE_OUT = 0.35;
         const FADE_IN = 0.45;
-        const HOLD = 2.2; // ✅ keep visible longer
+        const HOLD = 2.2;
 
-        tl.to(el, { opacity: 0, duration: FADE_OUT, ease: "power2.inOut" })
+        tl.to([el, ...tileImgs], { opacity: 0, duration: FADE_OUT, ease: "power2.inOut" })
             .add(() => {
-                i = (i + 1) % TITLES.length;
+                i = (i + 1) % CYCLE_LEN;
+
+                // ✅ swap BOTH while hidden (same instant)
                 el.textContent = TITLES[i] ?? "";
+                setHeroPhotoForAllTiles(HERO_PHOTOS[i] ?? HERO_PHOTOS[0]);
             })
-            .to(el, { opacity: 1, duration: FADE_IN, ease: "power2.inOut" })
-            .to({}, { duration: HOLD }); // ✅ hold
+            .to([el, ...tileImgs], { opacity: 1, duration: FADE_IN, ease: "power2.inOut" })
+            .to({}, { duration: HOLD });
 
         return () => {
             tl.kill();
         };
-    }, [TITLES]);
-
+    }, [TITLES, HERO_PHOTOS, mirror]);
 
     return (
         <section
@@ -175,11 +206,9 @@ export default function Hero() {
                         className="block w-full  min-h-[3.2em] text-4xl md:text-5xl font-semibold text-white leading-tight"
                     />
 
-
-
                     {/* <p data-hero-text className="max-w-xl text-core-textMuted">
-                        {t("hero.subtitle")}
-                    </p> */}
+            {t("hero.subtitle")}
+          </p> */}
                 </div>
 
                 {/* floating vector */}
@@ -191,15 +220,10 @@ export default function Hero() {
             opacity-10 z-0
           "
                 >
-                    <img
-                        src={Vector1}
-                        alt=""
-                        className="w-48 md:w-64 lg:w-72"
-                        draggable={false}
-                    />
+                    <img src={Vector1} alt="" className="w-48 md:w-64 lg:w-72" draggable={false} />
                 </div>
 
-                {/* RIGHT – TILES (hidden on mobile to avoid leaking) */}
+                {/* RIGHT – TILES */}
                 <div className=" md:block relative h-[600px] md:h-[680px] rounded-2xl overflow-visible">
                     <svg
                         className="absolute inset-0 h-full w-full"
@@ -211,14 +235,7 @@ export default function Hero() {
                         <defs>
                             {tiles.map((r, i) => (
                                 <clipPath key={i} id={`clip-${i}`} clipPathUnits="userSpaceOnUse">
-                                    <rect
-                                        x={r.x}
-                                        y={r.y}
-                                        width={r.w}
-                                        height={r.h}
-                                        rx={r.rx}
-                                        ry={r.rx}
-                                    />
+                                    <rect x={r.x} y={r.y} width={r.w} height={r.h} rx={r.rx} ry={r.rx} />
                                 </clipPath>
                             ))}
                         </defs>
@@ -226,7 +243,10 @@ export default function Hero() {
                         {tiles.map((_, i) => (
                             <g key={i} className="tile-g" clipPath={`url(#clip-${i})`}>
                                 <image
-                                    href={HeroPhoto}
+                                    ref={(node) => {
+                                        tileImageRefs.current[i] = node;
+                                    }}
+                                    href={HeroPhoto} // initial (will be swapped by GSAP at the same time as text)
                                     x="0"
                                     y="0"
                                     width={VB_W}
