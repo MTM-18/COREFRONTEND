@@ -4,14 +4,14 @@ import { useTranslation } from "react-i18next";
 import CoreProLogo from "../../../assets/sections/corePro2.png";
 import CoreAcademyLogo from "../../../assets/sections/coreAcademy.png";
 import CoreVenturesLogo from "../../../assets/sections/CoreVenturesLab.png";
-import CorePodcastLogo from "../../../assets/sections/coreTalk.png";
+import CorePodcastLogo from "../../../assets/sections/CoreTalk.png";
 import CoreInternLogo from "../../../assets/sections/coreIntern.png";
 import CoreConsultingLogo from "../../../assets/sections/CoreConsulting.png";
 
 import CoreProLogoWhite from "../../../assets/sections/CoreProWhite.png";
 import CoreAcademyLogoWhite from "../../../assets/sections/coreAcademyWhite.png";
 import CoreVenturesLogoWhite from "../../../assets/sections/CoreVenturesLabWhite.png";
-import CorePodcastLogoWhite from "../../../assets/sections/coreTalkWhite.png";
+import CorePodcastLogoWhite from "../../../assets/sections/CoreTalkWhite.png";
 import CoreInternLogoWhite from "../../../assets/sections/coreInternWhite.png";
 import CoreConsultingLogoWhite from "../../../assets/sections/CoreConsultingWhite.png";
 
