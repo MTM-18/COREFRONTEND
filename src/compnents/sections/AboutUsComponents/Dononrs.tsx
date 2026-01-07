@@ -6,8 +6,8 @@ import abdullahNoriCharityLogo from "../../../assets/donorsLogos/abdullahNoriCha
 import dhiaAcademyLogo from "../../../assets/donorsLogos/dhiaAcademy.png";
 import islamicDevelopmentBankLogo from "../../../assets/donorsLogos/islamicDevelopmentBank.jpg";
 import qatarAlkhairiahLogo from "../../../assets/donorsLogos/qatarAlkhairiah.svg";
-import sparkLogo from "../../../assets/donorsLogos/Spark (2).png";
-import unhcrLogo from "../../../assets/donorsLogos/UNHCR (2).png";
+import sparkLogo from "../../../assets/donorsLogos/Spark.png";
+import unhcrLogo from "../../../assets/donorsLogos/UNHCR.png";
 
 type Donor = {
     id: string;
