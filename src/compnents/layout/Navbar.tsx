@@ -160,7 +160,8 @@ export default function Navbar() {
 
     return (
         <header
-            dir="ltr"
+            dir={currentLang === "ar" ? "rtl" : "ltr"}
+
             className="
         fixed top-0 inset-x-0 z-50
         bg-white/0 dark:bg-black/0

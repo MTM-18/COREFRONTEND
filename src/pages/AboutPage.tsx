@@ -1,6 +1,6 @@
 import PageShell from "../compnents/layout/PageShell";
 import VisionMissionSection from "../compnents/sections/AboutUsComponents/VisionMissionSection";
-import ValuesSection from "../compnents/sections/AboutUsComponents/ValuesSection";
+import OurSectionsTable from "../compnents/sections/AboutUsComponents/ValuesSection";
 import TeamSection from "../compnents/sections/AboutUsComponents/TeamSection";
 import DonorsSection from "../compnents/sections/AboutUsComponents/Dononrs";
 import PhotoLibrarySection from "../compnents/sections/AboutUsComponents/PhotoLibrarySection";
@@ -22,7 +22,7 @@ export default function AboutPage() {
                     <VisionMissionSection />
                     <section className="fade-up">
 
-                        <ValuesSection />
+                        <OurSectionsTable />
                     </section>
                     <section className="fade-up">
 

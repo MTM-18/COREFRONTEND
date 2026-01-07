@@ -1,117 +1,76 @@
 import { useTranslation } from "react-i18next";
 
-// import your patterns
-import Pattern1 from "../../../assets/icons/Pattern 1.svg";
-import Pattern2 from "../../../assets/icons/PatternCard2 1.svg";
-import Pattern3 from "../../../assets/icons/PatternCard3 1.svg";
-import Pattern4 from "../../../assets/icons/PatternCard4 1.svg";
-import Pattern5 from "../../../assets/icons/PatternCard5 1.svg";
-import Pattern6 from "../../../assets/icons/PatternCard6 1.svg";
+import CoreProLogo from "../../../assets/sections/corePro2.png";
+import CoreAcademyLogo from "../../../assets/sections/coreAcademy.png";
+import CoreVenturesLogo from "../../../assets/sections/CoreVenturesLab.png";
+import CorePodcastLogo from "../../../assets/sections/corePro2.png";
+import CoreInternLogo from "../../../assets/sections/coreIntern.png";
+import CoreConsultingLogo from "../../../assets/sections/CoreConsulting.png";
 
+type SectionItem = {
+    id: string;
+    logo: string;
+    altKey: string;
+};
 
-type ValueItem = {
-    id:
-    | "partnership"
-    | "quality"
-    | "innovation"
-    | "institutionalism"
-    | "trust"
-    | "efficiency";
-    icon: string;
-    titleKey: string;
-    bodyKey: string;
-}
-
-const VALUES: ValueItem[] = [
-    {
-        id: "partnership",
-        icon: Pattern1,
-        titleKey: "aboutPage.valuesSection.items.partnership.title",
-        bodyKey: "aboutPage.valuesSection.items.partnership.body",
-    },
-    {
-        id: "quality",
-        icon: Pattern2,
-        titleKey: "aboutPage.valuesSection.items.quality.title",
-        bodyKey: "aboutPage.valuesSection.items.quality.body",
-    },
-    {
-        id: "innovation",
-        icon: Pattern3,
-        titleKey: "aboutPage.valuesSection.items.innovation.title",
-        bodyKey: "aboutPage.valuesSection.items.innovation.body",
-    },
-    {
-        id: "institutionalism",
-        icon: Pattern4,
-        titleKey: "aboutPage.valuesSection.items.institutionalism.title",
-        bodyKey: "aboutPage.valuesSection.items.institutionalism.body",
-    },
-    {
-        id: "trust",
-        icon: Pattern5,
-        titleKey: "aboutPage.valuesSection.items.trust.title",
-        bodyKey: "aboutPage.valuesSection.items.trust.body",
-    },
-    {
-        id: "efficiency",
-        icon: Pattern6,
-        titleKey: "aboutPage.valuesSection.items.efficiency.title",
-        bodyKey: "aboutPage.valuesSection.items.efficiency.body",
-    },
+const SECTIONS: SectionItem[] = [
+    { id: "corePro", logo: CoreProLogo, altKey: "sections.corePro.title" },
+    { id: "coreAcademy", logo: CoreAcademyLogo, altKey: "sections.coreAcademy.title" },
+    { id: "coreVentures", logo: CoreVenturesLogo, altKey: "sections.coreVentures.title" },
+    { id: "corePodcast", logo: CorePodcastLogo, altKey: "sections.corePodcast.title" },
+    { id: "coreIntern", logo: CoreInternLogo, altKey: "sections.coreIntern.title" },
+    { id: "coreConsulting", logo: CoreConsultingLogo, altKey: "sections.coreConsulting.title" },
 ];
 
-
-export default function ValuesSection() {
+export default function OurSectionsTable() {
     const { t } = useTranslation();
 
     return (
-        <section className=" py-12 md:py-16">
-            <div className="layout-shell max-w-7xl mx-auto space-y-10">
-
+        <section className="">
+            <div className="layout-shell  mx-auto space-y-8">
                 {/* Heading */}
                 <div className="space-y-2">
                     <h2 className="text-2xl md:text-3xl font-semibold text-core-brand dark:text-core-textAccent">
                         {t("aboutPage.valuesSection.title")}
                     </h2>
 
-                    <p className="text-sm md:text-base text-core-textDark dark:text-core-textLight max-w-xl">
-                        {t("aboutPage.valuesSection.subtitle")}
-                    </p>
                 </div>
 
-                {/* Grid */}
-                <div className="grid gap-6 md:gap-8 md:grid-cols-3">
-                    {VALUES.map((values) => (
-                        <article
-                            key={values.id}
-                            className="card-surface p-6 md:p-8 flex flex-col justify-between"
+                {/* Table-like grid */}
+                <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+                    {SECTIONS.map((s) => (
+                        <div
+                            key={s.id}
+                            className="
+                group relative overflow-hidden rounded-2xl
+                
+                bg-white/90 dark:bg-black/60
+                shadow-sm dark:shadow-lg
+                transition-transform duration-200
+                hover:scale-[1.02]
+              "
                         >
-                            {/* Text */}
-                            <div>
-                                <h3 className="text-base font-semibold text-core-textDark dark:text-core-textLight">
-                                    {t(values.titleKey)}
-                                </h3>
-
-                                <p className="text-sm mt-2 text-core-textMuted leading-relaxed">
-                                    {t(values.bodyKey)}
-                                </p>
-                            </div>
-
-                            {/* Icon */}
-                            <div className="mt-6 flex justify-start">
+                            <div className="h-[140px] sm:h-[160px] lg:h-[170px] p-5 sm:p-6 flex items-center justify-center">
                                 <img
-                                    src={values.icon}
-                                    className="h-20 w-auto"
-                                    alt={t(values.titleKey)}
+                                    src={s.logo}
+                                    alt={t(s.altKey)}
+                                    loading="lazy"
+                                    decoding="async"
+                                    className="
+                    max-h-16 sm:max-h-20 lg:max-h-24 w-auto object-contain
+                    opacity-90 dark:opacity-85
+                    transition-transform duration-200
+                    group-hover:scale-[1.03]
+                  "
                                 />
                             </div>
-                        </article>
+
+                            {/* subtle overlay that adapts to theme */}
+                            <div className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-black/0 via-transparent to-black/5 dark:to-white/10" />
+                        </div>
                     ))}
                 </div>
             </div>
         </section>
-
     );
-
 }

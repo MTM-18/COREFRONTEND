@@ -1,9 +1,13 @@
 // src/pages/StylizedGlobe.tsx
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 import Globe from "react-globe.gl";
 import * as topojson from "topojson-client";
 import * as THREE from "three";
 import { useNavigate } from "react-router-dom";
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 import BackgroundOrbits from "../compnents/layout/BackgroundOrbits";
 import coreLogo from "../assets/logo/fullWhiteLogo.svg";
@@ -201,7 +205,7 @@ export default function StylizedGlobe() {
 
             const wrap = document.createElement("div");
             wrap.style.pointerEvents = "none";
-            wrap.style.transform = "translate(-50%, -115%)";
+            wrap.style.transform = "translate(-50%, -70%)";
 
             const label = document.createElement("div");
             label.textContent = d.label;
@@ -328,6 +332,8 @@ export default function StylizedGlobe() {
             document.body.style.cursor = "default";
         };
     }, [brandCss.orange, brandCss.purple, polys.length]);
+
+
 
     return (
         <div className="relative w-full h-[100dvh] overflow-hidden" style={{ background: bgGradient }}>

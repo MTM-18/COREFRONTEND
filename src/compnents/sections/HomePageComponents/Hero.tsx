@@ -1,11 +1,12 @@
 import { useLayoutEffect, useMemo, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import gsap from "gsap";
+import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import HeroPhoto from "../../../assets/display/1.webp";
 import Vector1 from "../../../assets/icons/PatternCard6 1.svg";
-const LEFT_PAD = 10; // little breathing room from the left (optional)
+
+const LEFT_PAD = 10;
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -13,16 +14,25 @@ gsap.registerPlugin(ScrollTrigger);
 export default function Hero() {
     const { t, i18n } = useTranslation();
     const root = useRef<HTMLElement | null>(null);
+    const headlineRef = useRef<HTMLHeadingElement | null>(null);
+
+    const TITLES = useMemo(
+        () => [
+            t("hero.title1"),
+            t("hero.title2"),
+            t("hero.title3"),
+            t("hero.title4"),
+        ],
+        [i18n.language, t]
+    );
 
     // ====== TILE LOOK ======
     const STEPS = 5;
     const GAP = 10;
     const RX = 28;
 
-    // SVG viewBox width fixed, height computed (so nothing gets cut)
     const VB_W = 1000;
 
-    // Bigger tiles
     const topY = 55;
     const stepH = 100;
     const stepRise = stepH + GAP;
@@ -38,12 +48,9 @@ export default function Hero() {
     const baseTiles = useMemo(() => {
         return Array.from({ length: STEPS }).map((_, i) => {
             const y = topY + i * stepRise;
-
             const rawW = Math.min(startW + i * growW, maxW);
 
-            // ✅ make sure tile never crosses the left edge
             const w = Math.min(rawW, rightX - LEFT_PAD);
-
             const x = rightX - w;
 
             const isLast = i === STEPS - 1;
@@ -57,16 +64,18 @@ export default function Hero() {
         });
     }, []);
 
-    // ✅ ensure viewBox height fits the lowest tile + padding (fixes "cut")
     const VB_H = useMemo(() => {
         const bottom = Math.max(...baseTiles.map((r) => r.y + r.h));
-        return Math.ceil(bottom + 30); // extra breathing room
+        return Math.ceil(bottom + 30);
     }, [baseTiles]);
 
     const tiles = useMemo(() => {
-        return baseTiles.map((r) => (mirror ? { ...r, x: VB_W - (r.x + r.w) } : r));
+        return baseTiles.map((r) =>
+            mirror ? { ...r, x: VB_W - (r.x + r.w) } : r
+        );
     }, [baseTiles, mirror]);
 
+    // Reveal + scroll motion
     useLayoutEffect(() => {
         if (!root.current) return;
 
@@ -110,12 +119,45 @@ export default function Hero() {
         }, root);
 
         return () => ctx.revert();
-    }, [i18n, mirror]);
+    }, [i18n.language, mirror]);
+
+    // ✅ First approach: single headline that cycles titles
+    useLayoutEffect(() => {
+        const el = headlineRef.current;
+        if (!el) return;
+
+        const prefersReduced =
+            window.matchMedia?.("(prefers-reduced-motion: reduce)")?.matches;
+
+        let i = 0;
+        el.textContent = TITLES[0] ?? "";
+
+        if (prefersReduced || TITLES.length <= 1) return;
+
+        const tl = gsap.timeline({ repeat: -1 });
+
+        const FADE_OUT = 0.35;
+        const FADE_IN = 0.45;
+        const HOLD = 2.2; // ✅ keep visible longer
+
+        tl.to(el, { opacity: 0, duration: FADE_OUT, ease: "power2.inOut" })
+            .add(() => {
+                i = (i + 1) % TITLES.length;
+                el.textContent = TITLES[i] ?? "";
+            })
+            .to(el, { opacity: 1, duration: FADE_IN, ease: "power2.inOut" })
+            .to({}, { duration: HOLD }); // ✅ hold
+
+        return () => {
+            tl.kill();
+        };
+    }, [TITLES]);
+
 
     return (
         <section
             ref={root}
-            className="relative mx-auto w-full px-6 pt-24 pb-16 min-h-[100dvh] flex items-center"
+            className="relative mx-auto w-full px-6 pt-15  min-h-[100dvh] flex items-center"
         >
             <div className="grid md:grid-cols-2 gap-16 items-center w-full">
                 {/* LEFT */}
@@ -127,15 +169,20 @@ export default function Hero() {
                         {t("hero.eyebrow")}
                     </span>
 
-                    <h1 data-hero-text className="text-4xl md:text-5xl font-semibold text-white">
-                        {t("hero.title")}
-                    </h1>
+                    <h1
+                        ref={headlineRef}
+                        data-hero-text
+                        className="block w-full  min-h-[3.2em] text-4xl md:text-5xl font-semibold text-white leading-tight"
+                    />
 
-                    <p data-hero-text className="max-w-xl text-core-textMuted">
+
+
+                    {/* <p data-hero-text className="max-w-xl text-core-textMuted">
                         {t("hero.subtitle")}
-                    </p>
+                    </p> */}
                 </div>
 
+                {/* floating vector */}
                 <div
                     data-floating-vector
                     className="
@@ -144,11 +191,16 @@ export default function Hero() {
             opacity-10 z-0
           "
                 >
-                    <img src={Vector1} alt="" className="w-48 md:w-64 lg:w-72" draggable={false} />
+                    <img
+                        src={Vector1}
+                        alt=""
+                        className="w-48 md:w-64 lg:w-72"
+                        draggable={false}
+                    />
                 </div>
 
-                {/* RIGHT – TILES */}
-                <div className="relative h-[600px] md:h-[680px] rounded-2xl overflow-visible">
+                {/* RIGHT – TILES (hidden on mobile to avoid leaking) */}
+                <div className=" md:block relative h-[600px] md:h-[680px] rounded-2xl overflow-visible">
                     <svg
                         className="absolute inset-0 h-full w-full"
                         viewBox={`0 0 ${VB_W} ${VB_H}`}
@@ -159,8 +211,14 @@ export default function Hero() {
                         <defs>
                             {tiles.map((r, i) => (
                                 <clipPath key={i} id={`clip-${i}`} clipPathUnits="userSpaceOnUse">
-                                    {/* ✅ ry added for smoother corners */}
-                                    <rect x={r.x} y={r.y} width={r.w} height={r.h} rx={r.rx} ry={r.rx} />
+                                    <rect
+                                        x={r.x}
+                                        y={r.y}
+                                        width={r.w}
+                                        height={r.h}
+                                        rx={r.rx}
+                                        ry={r.rx}
+                                    />
                                 </clipPath>
                             ))}
                         </defs>

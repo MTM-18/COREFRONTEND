@@ -78,7 +78,7 @@
 
 /* Footer gradient container */
 .footer-surface {
-    @apply w-full mx-auto text-core-textLight rounded-tl-footer bg-gradient-to-r from-core-brand to-core-accent dark:from-core-darkSurface dark:to-core-accent;
+    @apply w-full mx-auto text-core-textLight rounded-t-footer bg-gradient-to-r from-core-brand to-core-accent dark:from-core-darkSurface dark:to-core-accent;
 }
 
 /* Footer inner spacing + grid */

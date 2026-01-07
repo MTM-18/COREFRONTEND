@@ -9,7 +9,6 @@ import ContactPage from "./pages/ContactPage";
 import Navbar from "./compnents/layout/Navbar";
 import Footer from "./compnents/layout/Footer";
 import BackgroundOrbits from "./compnents/layout/BackgroundOrbits";
-import GlobalVectorsLayer from "./styles/GlobalVectorLayer";
 import StylizedGlobe from "./pages/StylizedGlobe";
 
 
@@ -19,7 +18,6 @@ function SiteLayout() {
     <div className="app-shell min-h-screen flex flex-col text-core-textDark dark:text-core-textLight">
       <BackgroundOrbits />
       <Navbar />
-      {/* <GlobalVectorsLayer /> */}
       <main className="flex-1 pt-16">
         <Outlet />
       </main>

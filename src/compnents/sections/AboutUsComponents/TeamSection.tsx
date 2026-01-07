@@ -25,19 +25,7 @@ const TEAM: TeamMember[] = [
         nameKey: "aboutPage.team.abdulrahman.name",
         roleKey: "aboutPage.team.abdulrahman.role",
     },
-    {
-        id: "muhammed",
-        image: muhammedImg,
-        nameKey: "aboutPage.team.muhammed.name",
-        roleKey: "aboutPage.team.muhammed.role",
-    },
 
-    {
-        id: "abdullah",
-        image: abdullahImg,
-        nameKey: "aboutPage.team.abdullah.name",
-        roleKey: "aboutPage.team.abdullah.role",
-    },
     {
         id: "albaraa",
         image: albaraaImg,
@@ -51,12 +39,7 @@ const TEAM: TeamMember[] = [
         nameKey: "aboutPage.team.lara.name",
         roleKey: "aboutPage.team.lara.role",
     },
-    {
-        id: "omar",
-        image: omarImg,
-        nameKey: "aboutPage.team.omar.name",
-        roleKey: "aboutPage.team.omar.role",
-    },
+
     {
         id: "habiba",
         image: habibaImg,
@@ -64,24 +47,6 @@ const TEAM: TeamMember[] = [
         roleKey: "aboutPage.team.habiba.role",
     },
 
-    {
-        id: "hamza",
-        image: hamzaImg,
-        nameKey: "aboutPage.team.hamza.name",
-        roleKey: "aboutPage.team.hamza.role",
-    },
-    {
-        id: "karam",
-        image: karamImg,
-        nameKey: "aboutPage.team.karam.name",
-        roleKey: "aboutPage.team.karam.role",
-    },
-    {
-        id: "nazir",
-        image: nazirImg,
-        nameKey: "aboutPage.team.nazir.name",
-        roleKey: "aboutPage.team.nazir.role",
-    },
 ];
 
 export default function TeamSection() {
@@ -89,7 +54,7 @@ export default function TeamSection() {
 
     return (
         <section className=" py-12 md:py-16">
-            <div className="layout-shell max-w-7xl mx-auto space-y-10">
+            <div className="layout-shell  mx-auto space-y-10">
 
                 {/* Heading */}
                 <div className="space-y-2">

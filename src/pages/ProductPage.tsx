@@ -1,14 +1,8 @@
 import { useEffect } from "react";
 import PageShell from "../compnents/layout/PageShell";
-import CoreProEmpoweringYouth from "../compnents/sections/CoreProComponents/CoreProEmpoweringYouth";
-import CoreProStagesTimeline from "../compnents/sections/CoreProComponents/CoreProStagesTimeline";
-import CoreProTrainingFields from "../compnents/sections/CoreProComponents/CoreProTrainingFields";
-import CoreProVocationalFAQ from "../compnents/sections/CoreProComponents/CoreProVocationalFAQ";
-import CoreProVocationalHero from "../compnents/sections/CoreProComponents/CoreProVocationalHero";
-import CoreProVocationalIntroBand from "../compnents/sections/CoreProComponents/CoreProVocationalIntroBand";
+
 import { fadeUpOnScroll } from "../styles/GsapAnimation";
-
-
+import ProgramsPage from "../compnents/sections/CoreProComponents/programPage";
 
 export default function ProductPage() {
     useEffect(() => {
@@ -17,10 +11,12 @@ export default function ProductPage() {
     return (
 
         <PageShell>
-            <div className="min-h-screen flex items-center justify-center bg-core-bg">
-                <main>
+            <div className="min-h-screen bg-core-bg">
+                <main className="mx-auto max-w-6xl px-4 py-10">
 
-                    <CoreProVocationalHero />
+                    <ProgramsPage />
+
+                    {/* <CoreProVocationalHero />
                     <section className="fade-up">
                         <CoreProVocationalIntroBand />
                     </section>
@@ -35,7 +31,7 @@ export default function ProductPage() {
                     </section>
                     <section className="fade-up">
                         <CoreProVocationalFAQ />
-                    </section>
+                    </section> */}
                 </main>
             </div>
         </PageShell>

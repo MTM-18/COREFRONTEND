@@ -9,7 +9,10 @@
     },
     "hero": {
         "eyebrow": "CORE ISTANBUL",
-        "title": "We design unique, innovative experiences beyond traditional programs.",
+        "title1": "In our world, we create success stories beyond the ordinary—blending passion and creativity to refine ideas and turn them into reality.",
+        "title2": "We don’t offer conventional programs; we offer passion-led journeys that carry you toward your professional dreams.",
+        "title3": "Core isn’t just a place to work—it’s a complete entrepreneurship community.",
+        "title4": "Core Istanbul, the largest Turkish–Arab hub for entrepreneurship.",
         "subtitle": "CORE is a home for passionate founders, professionals, and learners. We combine mentorship, community, and real-world projects to help you grow faster than you thought possible."
     },
     "actions": {
@@ -25,6 +28,11 @@
         "title": "Home of Passion",
         "newsletterTitle": "Stay up to date with the latest news from Core Istanbul",
         "newsletterPlaceholder": "Enter Your Email Here",
+        "newsletterLoading": "Sending...",
+        "newsletterSuccess": "Subscribed successfully!",
+        "newsletterErrorEmpty": "Please enter your email.",
+        "newsletterErrorGeneric": "Subscription failed. Try again.",
+        "newsletterErrorNetwork": "Network error. Try again.",
         "newsletterButton": "Send",
         "newsletterNote": "By registering to receive email messages, you agree to our privacy policy. Unsubscribe at any time.",
         "servicesTitle": "Services",
@@ -47,7 +55,9 @@
     "homePage": {
         "aboutSection": {
             "title": "About Core Istanbul",
-            "body": "Core Istanbul is an initiative by young youth in Turkey aiming to support youth entrepreneurship..."
+            "body": " A global organization founded by a select group of young people, supported by business leaders and international organizations from within and outside Türkiye. Headquartered in Istanbul, with branches in Iraq and Syria, it seeks to create an integrated entrepreneurship community within a youth-driven environment that inspires creativity and innovation, supported by a network of experts and investors.",
+            "ctaPrimary": "Learn More",
+            "ctaSecondary": "Contact Us"
         },
         "servicesSection": {
             "title": "Our Services",
@@ -64,6 +74,10 @@
                 "workspace": {
                     "title": "Shared Workspace",
                     "body": "A modern co-working space that offers a productive environment, community, and networking opportunities for entrepreneurs and teams."
+                },
+                "consulting": {
+                    "title": "Consulting Services",
+                    "body": "Professional consulting tailored to the needs of early-stage projects and startups."
                 }
             }
         },
@@ -120,50 +134,71 @@
                     "role": "UN Advisor & Board Chairman, World Charity Authority"
                 }
             }
+        },
+        "achievements": {
+            "title": "Achievements",
+            "items": {
+                "beneficiaries": "Beneficiaries",
+                "programs": "Programs Implemented",
+                "donors": "Donor Organizations",
+                "partners": "Partners",
+                "experts": "Experts",
+                "graduates": "Graduates of Vocational & Technical Training Programs",
+                "startups": "Startups",
+                "investments": "Investments"
+            },
+            "suffix": {
+                "millionUsd": "million USD"
+            }
         }
     },
     "aboutPage": {
+        "hero": {
+            "kicker": "About us",
+            "title": "Who we are",
+            "body": "A global organization founded by a group of young people with support from business leaders and international organizations inside and outside Turkey. Headquartered in Istanbul with branches in Iraq and Syria, we aim to build an integrated entrepreneurship community within a youth-driven environment that inspires creativity and innovation—supported by a network of experts and investors."
+        },
         "vision": {
-            "title": "Our Vision",
-            "body": "A center for young entrepreneurship in Turkey, with incubators, accelerators, and an investor network across several countries in the Middle East and North Africa."
+            "title": "Vision",
+            "body": "A leading hub for Arab entrepreneurship in Turkey, with incubators, accelerators, and an investor network across the Middle East and North Africa."
         },
         "mission": {
-            "title": "Our Mission",
-            "body": "Contributing to the economical empowerment in Türkiye and Arab countries."
+            "title": "Mission",
+            "body": "Contributing to the creation of Arab startups and entrepreneurs who support the economic revival of their communities, and encouraging the spirit of innovation and entrepreneurial initiative among Arab youth."
         },
         "valuesSection": {
-            "title": "Our Values",
-            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training",
+            "title": "Our Sections",
+            "subtitle": "",
             "items": {
                 "partnership": {
-                    "title": "Partnership",
-                    "body": "We believe in the importance of collaboration and partnership with all stakeholders to achieve mutual and sustainable success."
+                    "title": "CorePro",
+                    "body": ""
                 },
                 "quality": {
-                    "title": "Quality",
-                    "body": "We aim to provide the best services and products to our clients and partners."
+                    "title": "Core Academy",
+                    "body": ""
                 },
                 "innovation": {
-                    "title": "Innovation",
-                    "body": "We consider innovation the core of all our work, always striving for excellence and development."
+                    "title": "Core Ventures Lab",
+                    "body": ""
                 },
                 "institutionalism": {
-                    "title": "Institutionalism",
-                    "body": "We are distinguished by a spirit of institution and dedication, working as one team towards achieving our common goals."
+                    "title": "Core Podcast",
+                    "body": ""
                 },
                 "trust": {
-                    "title": "Trust",
-                    "body": "We build strong relationships based on trust and integrity with all our clients and partners."
+                    "title": "Core Intern",
+                    "body": ""
                 },
                 "efficiency": {
-                    "title": "Efficiency",
-                    "body": "We strive to achieve efficiency and effectiveness in all our operations and services."
+                    "title": "Core Consulting",
+                    "body": ""
                 }
             }
         },
         "team": {
             "title": "Team",
-            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training",
+            "subtitle": "",
             "abdulrahman": {
                 "name": "Abdulrahman Al-Esawy",
                 "role": "Executive Director"
@@ -219,13 +254,28 @@
         },
         "donors": {
             "title": "Donors",
-            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training",
+            "subtitle": "",
             "list": {
                 "namaa": {
-                    "name": "Namaa Charity"
+                    "name": "Nama’a Charity"
                 },
                 "nouri": {
-                    "name": "Sheikh Abdullah Al Nouri Charity Society"
+                    "name": "Abdullah Al-Nouri Charity"
+                },
+                "dhiaAcademy": {
+                    "name": "Dhia Academy"
+                },
+                "islamicDevelopmentBank": {
+                    "name": "Islamic Development Bank"
+                },
+                "qatarAlkhairiah": {
+                    "name": "Qatar Alkhairiah"
+                },
+                "spark": {
+                    "name": "Spark"
+                },
+                "unhcr": {
+                    "name": "UNHCR"
                 }
             }
         },
@@ -389,7 +439,7 @@
         },
         "trainingFields": {
             "title": "Training Fields",
-            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training.",
+            "subtitle": "Core Istanbul business hub offers specialized training fields and practical programs to build in-demand skills.",
             "items": {
                 "photography": "Photography",
                 "videoEditing": "Video Editing",
@@ -426,8 +476,8 @@
             }
         },
         "vocationalFaq": {
-            "title": "Core Pro Stages",
-            "subtitle": "Core Istanbul business hub offers advanced programs specialized in vocational training.",
+            "title": "Frequently Asked Questions",
+            "subtitle": "",
             "items": {
                 "whatIsProgram": {
                     "q": "What is the Vocational Training Program?",
@@ -455,6 +505,151 @@
                 }
             },
             "ctaText": "Do you have another question? Send it here."
+        },
+        "title": "Programs",
+        "subtitle": "Specialized programs that empower youth with practical skills and entrepreneurial pathways.",
+        "tabs": {
+            "vocational": "Technical & Vocational Qualification",
+            "advanced": "Advanced Vocational Training",
+            "internship": "Training & Workplace Immersion",
+            "entrepreneurship": "Entrepreneurship Programs"
+        },
+        "comingSoon": {
+            "title": "Coming Soon",
+            "desc": "We’re preparing this program. Check back soon for full details."
+        },
+        "vocational": {
+            "title": "Technical & Vocational Qualification Programs",
+            "aboutTitle": "About the program",
+            "about": "Intensive technical and vocational training programs designed to empower youth and new graduates to develop their career path. The program runs for 2 months (120 hours) of training and mentoring. It starts by studying market and company needs, then building the curriculum with experts, followed by training, and ends with linking graduates to companies and employment.",
+            "sectorsTitle": "Sectors",
+            "sectors": [
+                "Digital Marketing",
+                "E-commerce",
+                "Graphic Design",
+                "Professional Photography",
+                "Programming",
+                "Financial Accounting",
+                "Video Production",
+                "Project Management",
+                "Interior Design",
+                "Content Creation"
+            ],
+            "achievementsTitle": "Achievements",
+            "stats": [
+                {
+                    "value": "600",
+                    "label": "Graduates"
+                },
+                {
+                    "value": "100",
+                    "label": "Experts"
+                },
+                {
+                    "value": "85%",
+                    "label": "Employment rate"
+                },
+                {
+                    "value": "20",
+                    "label": "Advanced programs"
+                },
+                {
+                    "value": "648",
+                    "label": "Training workshops"
+                },
+                {
+                    "value": "$900",
+                    "label": "Average salary"
+                }
+            ],
+            "testimonialsTitle": "They said",
+            "testimonials": [
+                {
+                    "name": "Noor Bas Oghlo",
+                    "text": "What I learned at Core, I didn’t learn in 4 years at university."
+                },
+                {
+                    "name": "Hussein Al-Hussein",
+                    "text": "What we studied at Core developed our skills... (etc.)"
+                }
+            ]
+        },
+        "entrepreneurship": {
+            "title": "Entrepreneurship Programs",
+            "aboutTitle": "About the program",
+            "about": "Core Istanbul has a specialized program to develop the entrepreneurship ecosystem and startups. It aims to build startups capable of overcoming challenges and achieving success to enhance youth economic empowerment. The program lasts 6 months: we recruit and train participants to develop their ideas and projects, then connect them with Core’s investor network to attract investment and enter the market.",
+            "includesTitle": "The program includes",
+            "includes": [
+                "Incubation programs that transform startups from ideas into market-ready companies, connected to experts and investors.",
+                "Acceleration programs for existing startups to improve operations and expand to capture larger market share, connected to experts and investors.",
+                "An investor network inside and outside Turkey ready to invest in startups.",
+                "Conferences, meetups, and specialized events to grow the entrepreneurship community and connect stakeholders."
+            ],
+            "achievementsTitle": "Achievements",
+            "stats": [
+                {
+                    "value": "3",
+                    "label": "Incubation & acceleration programs"
+                },
+                {
+                    "value": "67",
+                    "label": "Incubated companies"
+                },
+                {
+                    "value": "1221",
+                    "label": "Submitted projects"
+                },
+                {
+                    "value": "$5M",
+                    "label": "Investments in startups"
+                },
+                {
+                    "value": "80%",
+                    "label": "Tech projects"
+                },
+                {
+                    "value": "35%",
+                    "label": "Women-led projects"
+                }
+            ],
+            "sectorsTitle": "Sectors",
+            "sectors": [
+                "Logistics",
+                "Industrial & Manufacturing",
+                "E-commerce",
+                "Artificial Intelligence",
+                "Digital Services",
+                "Health & Medical"
+            ],
+            "cohortsTitle": "Incubation cohorts",
+            "cohorts": [
+                "Incubation Cohort 1",
+                "Incubation Cohort 2",
+                "Incubation Cohort 3"
+            ],
+            "stagesTitle": "Incubation program stages",
+            "stages": [
+                {
+                    "title": "1) Apply",
+                    "desc": "Attract incubatable projects via an online form to understand the idea and founders, then select 50 projects to move to the next stage."
+                },
+                {
+                    "title": "2) Bootcamp",
+                    "desc": "A 2-day intensive bootcamp to finalize pitch decks and present to the jury, filtering to 20 projects that enter incubation."
+                },
+                {
+                    "title": "3) Incubation",
+                    "desc": "A full 6-month incubation program with intensive workshops to build business models and prepare for market entry."
+                },
+                {
+                    "title": "4) Final Demo Day",
+                    "desc": "Projects deliver final pitches to the jury to announce investment-ready winners."
+                },
+                {
+                    "title": "5) Post-incubation",
+                    "desc": "Core connects successful graduates with its investor network and continues advisory and mentoring support."
+                }
+            ]
         }
     },
     "workspacePage": {

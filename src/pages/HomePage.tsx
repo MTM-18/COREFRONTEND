@@ -6,7 +6,7 @@ import AboutSection from "../compnents/sections/HomePageComponents/AboutSection"
 import ServiceSection from "../compnents/sections/HomePageComponents/OurServices";
 import NewsSection from "../compnents/sections/HomePageComponents/NewsSection";
 import TestimonialsSection from "../compnents/sections/HomePageComponents/TestimonialsSection";
-
+import AchievementsSection from "../compnents/sections/HomePageComponents/AchievementSection";
 import { fadeUpOnScroll } from "../styles/GsapAnimation";
 
 export default function HomePage() {
@@ -20,7 +20,10 @@ export default function HomePage() {
                 <main>
                     {/* HERO: always visible, no fade-up */}
                     <Hero />
-
+                    {/* ACHIEVEMENTS */}
+                    <section className="fade-up">
+                        <AchievementsSection />
+                    </section>
                     {/* These will fade on scroll */}
                     <section className="fade-up">
                         <AboutSection />
