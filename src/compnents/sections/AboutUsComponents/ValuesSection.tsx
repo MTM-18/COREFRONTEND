@@ -2,18 +2,18 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import CoreProLogo from "../../../assets/sections/corepro.png";
-import CoreAcademyLogo from "../../../assets/sections/CoreAcademy.png";
-import CoreVenturesLogo from "../../../assets/sections/CoreVenturesLab.png";
-import CorePodcastLogo from "../../../assets/sections/CoreTalk.png";
-import CoreInternLogo from "../../../assets/sections/CoreIntern.png";
-import CoreConsultingLogo from "../../../assets/sections/CoreConsulting.png";
+import CoreAcademyLogo from "../../../assets/sections/coreacademy.png";
+import CoreVenturesLogo from "../../../assets/sections/coreventureslab.png";
+import CorePodcastLogo from "../../../assets/sections/coretalk.png";
+import CoreInternLogo from "../../../assets/sections/coreintern.png";
+import CoreConsultingLogo from "../../../assets/sections/coreconsulting.png";
 
-import CoreProLogoWhite from "../../../assets/sections/CoreProWhite.png";
-import CoreAcademyLogoWhite from "../../../assets/sections/CoreAcademyWhite.png";
-import CoreVenturesLogoWhite from "../../../assets/sections/CoreVenturesLabWhite.png";
-import CorePodcastLogoWhite from "../../../assets/sections/CoreTalkWhite.png";
-import CoreInternLogoWhite from "../../../assets/sections/CoreInternWhite.png";
-import CoreConsultingLogoWhite from "../../../assets/sections/CoreConsultingWhite.png";
+import CoreProLogoWhite from "../../../assets/sections/coreprowhite.png";
+import CoreAcademyLogoWhite from "../../../assets/sections/coreacademywhite.png";
+import CoreVenturesLogoWhite from "../../../assets/sections/coreventuresLabwhite.png";
+import CorePodcastLogoWhite from "../../../assets/sections/coretalkwhite.png";
+import CoreInternLogoWhite from "../../../assets/sections/coreinternwhite.png";
+import CoreConsultingLogoWhite from "../../../assets/sections/coreconsultingwhite.png";
 
 type SectionItem = {
     id: string;
