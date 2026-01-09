@@ -10,7 +10,7 @@ import CoreConsultingLogo from "../../../assets/sections/coreconsulting.png";
 
 import CoreProLogoWhite from "../../../assets/sections/coreprowhite.png";
 import CoreAcademyLogoWhite from "../../../assets/sections/coreacademywhite.png";
-import CoreVenturesLogoWhite from "../../../assets/sections/coreventuresLabwhite.png";
+import CoreVenturesLogoWhite from "../../../assets/sections/coreventureslabwhite.png";
 import CorePodcastLogoWhite from "../../../assets/sections/coretalkwhite.png";
 import CoreInternLogoWhite from "../../../assets/sections/coreinternwhite.png";
 import CoreConsultingLogoWhite from "../../../assets/sections/coreconsultingwhite.png";
