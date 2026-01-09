@@ -20,7 +20,6 @@ import {
     FaFeatherAlt
 } from "react-icons/fa";
 
-
 const program1Logos = Object.values(
     import.meta.glob("/src/assets/logo/studentLogos/program1/*.{png,jpg,jpeg,webp,svg}", {
         eager: true,
@@ -42,7 +41,6 @@ const program3Logos = Object.values(
     })
 ) as string[];
 
-
 type TabKey = "vocational" | "advanced" | "internship" | "entrepreneurship";
 
 type Stat = { value: string; label: string };
@@ -54,7 +52,7 @@ export default function ProgramsPage() {
     const isAr = i18n.language?.startsWith("ar");
 
     const [active, setActive] = useState<TabKey>("vocational");
-    const baseKey = "coreProPage"; // ✅ your JSON is under coreProPage
+    const baseKey = "coreProPage";
 
     // refs for auto-scroll active tab into view on mobile
     const tabRefs = useRef<Record<TabKey, HTMLButtonElement | null>>({
@@ -90,18 +88,21 @@ export default function ProgramsPage() {
     );
 
     return (
-        <section dir={isAr ? "rtl" : "ltr"} className="w-full">
+        <section
+            dir={isAr ? "rtl" : "ltr"}
+            className="w-full px-4 sm:px-6 lg:px-0 max-w-6xl mx-auto"
+        >
             {/* Header */}
             <div className="mb-6 w-full">
-                <h1 className="text-3xl font-semibold tracking-tight">
+                <h1 className="text-2xl sm:text-3xl font-semibold tracking-tight">
                     {t(`${baseKey}.title`)}
                 </h1>
                 <p className="mt-2 text-sm opacity-80 max-w-2xl">
                     {t(`${baseKey}.subtitle`)}
                 </p>
 
-                {/* ✅ Tabs (mobile-safe + better selector) */}
-                <div className="mt-5 w-full flex justify-center">
+                {/* Tabs */}
+                <div className="mt-5 w-full flex justify-start sm:justify-center">
                     <div
                         role="tablist"
                         aria-label={t(`${baseKey}.title`)}
@@ -111,11 +112,9 @@ export default function ProgramsPage() {
                             "rounded-full border border-black/10 dark:border-white/10",
                             "bg-white/60 dark:bg-white/5 backdrop-blur",
                             "p-1",
-                            // ✅ prevents pop-out: scroll horizontally on small screens
                             "overflow-x-auto overflow-y-hidden",
                             "flex-nowrap",
                             "max-w-full",
-                            // ✅ hide scrollbar (no plugin needed)
                             "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
                         ].join(" ")}
                     >
@@ -133,9 +132,7 @@ export default function ProgramsPage() {
                                     aria-selected={on}
                                     onClick={() => setActive(tab.key)}
                                     className={[
-                                        // ✅ do not shrink, keep label in one line
                                         "shrink-0 whitespace-nowrap",
-                                        // sizing
                                         "px-4 py-2 text-xs sm:text-sm",
                                         "rounded-full transition",
                                         "focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2",
@@ -180,7 +177,7 @@ function Card({
     children: React.ReactNode;
 }) {
     return (
-        <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 p-5 shadow-sm">
+        <div className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/70 dark:bg-white/5 p-4 sm:p-5 shadow-sm">
             {title ? <div className="text-sm font-semibold">{title}</div> : null}
             <div className={title ? "mt-3" : ""}>{children}</div>
         </div>
@@ -191,34 +188,13 @@ function StatsGrid({ stats }: { stats: Stat[] }) {
     if (!stats.length) return null;
 
     return (
-        <div
-            className={[
-                "w-full",
-                "overflow-x-auto overflow-y-hidden",
-                "py-1",
-                "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-            ].join(" ")}
-        >
-            <div
-                className={[
-                    "grid",
-                    "grid-flow-col",   // fill columns first
-                    "grid-rows-2",     // ✅ two lines
-                    "gap-3",
-                    "auto-cols-[minmax(160px,1fr)]", // tile width
-                    "items-stretch"
-                ].join(" ")}
-            >
+        <div className="w-full min-w-0">
+            {/* ✅ Mobile: wrap grid (no horizontal scroll) */}
+            <div className="grid grid-cols-2 gap-3 sm:hidden">
                 {stats.map((s, idx) => (
                     <div
                         key={idx}
-                        className={[
-                            "rounded-xl border border-black/10 dark:border-white/10",
-                            "bg-white/60 dark:bg-white/5",
-                            "p-3",
-                            "min-h-[76px]",
-                            "flex flex-col justify-start gap-1"
-                        ].join(" ")}
+                        className="rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-3 min-h-[76px] flex flex-col gap-1"
                     >
                         <div className="text-lg font-semibold leading-none">{s.value}</div>
                         <div className="text-xs opacity-80 leading-snug break-words">
@@ -227,25 +203,40 @@ function StatsGrid({ stats }: { stats: Stat[] }) {
                     </div>
                 ))}
             </div>
-        </div>
-    );
-}
 
-
-function Chips({ items }: { items: string[] }) {
-    if (!items.length) return null;
-
-    return (
-        <ul className="grid sm:grid-cols-2 gap-2 text-sm">
-            {items.map((it, idx) => (
-                <li
-                    key={idx}
-                    className="rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 px-3 py-2"
+            {/* ✅ sm+: horizontal rail (2 rows) */}
+            <div
+                className={[
+                    "hidden sm:block w-full",
+                    "overflow-x-auto overflow-y-hidden",
+                    "py-1",
+                    "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                ].join(" ")}
+            >
+                <div
+                    className={[
+                        "grid",
+                        "grid-flow-col",
+                        "grid-rows-2",
+                        "gap-3",
+                        "auto-cols-[minmax(180px,1fr)]",
+                        "items-stretch"
+                    ].join(" ")}
                 >
-                    {it}
-                </li>
-            ))}
-        </ul>
+                    {stats.map((s, idx) => (
+                        <div
+                            key={idx}
+                            className="rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-3 min-h-[76px] flex flex-col gap-1"
+                        >
+                            <div className="text-lg font-semibold leading-none">{s.value}</div>
+                            <div className="text-xs opacity-80 leading-snug break-words">
+                                {s.label}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
     );
 }
 
@@ -289,21 +280,21 @@ function Vocational({
                 </p>
             </Card>
 
-            <div className="grid lg:grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-3 sm:gap-4">
                 <Card title={t(`${baseKey}.vocational.sectorsTitle`)}>
                     <SectorRail
                         items={sectors}
                         icons={[
-                            FaBullhorn,      // Digital Marketing
-                            FaShoppingCart,  // E-commerce
-                            FaPenNib,        // Graphic Design
-                            FaCamera,        // Photography
-                            FaCode,          // Programming
-                            FaCalculator,    // Financial Accounting
-                            FaVideo,         // Video Production
-                            FaTasks,         // Project Management
-                            FaCouch,         // Interior Design
-                            FaFeatherAlt     // Content Creation
+                            FaBullhorn, // Digital Marketing
+                            FaShoppingCart, // E-commerce
+                            FaPenNib, // Graphic Design
+                            FaCamera, // Photography
+                            FaCode, // Programming
+                            FaCalculator, // Financial Accounting
+                            FaVideo, // Video Production
+                            FaTasks, // Project Management
+                            FaCouch, // Interior Design
+                            FaFeatherAlt // Content Creation
                         ]}
                     />
                 </Card>
@@ -350,9 +341,7 @@ function Entrepreneurship({
     return (
         <div className="space-y-4">
             <Card>
-                <div className="text-xl font-semibold">
-                    {t(`${baseKey}.entrepreneurship.title`)}
-                </div>
+                <div className="text-xl font-semibold">{t(`${baseKey}.entrepreneurship.title`)}</div>
 
                 <p className="mt-2 text-sm opacity-80">
                     <span className="font-semibold">{t(`${baseKey}.entrepreneurship.aboutTitle`)}: </span>
@@ -360,7 +349,7 @@ function Entrepreneurship({
                 </p>
             </Card>
 
-            <div className="grid lg:grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-3 sm:gap-4">
                 <Card title={t(`${baseKey}.entrepreneurship.includesTitle`)}>
                     {includes.length ? (
                         <ul className="space-y-2 text-sm">
@@ -381,7 +370,7 @@ function Entrepreneurship({
                 </Card>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-4">
+            <div className="grid lg:grid-cols-2 gap-3 sm:gap-4">
                 <Card title={t(`${baseKey}.entrepreneurship.sectorsTitle`)}>
                     <SectorRail
                         items={sectors}
@@ -393,9 +382,9 @@ function Entrepreneurship({
                     <CohortAccordion
                         cohorts={cohorts}
                         rails={[
-                            { titleFallback: "Incubation Cohort 1", logos: program1Logos },
-                            { titleFallback: "Incubation Cohort 2", logos: program2Logos },
-                            { titleFallback: "Incubation Cohort 3", logos: program3Logos }
+                            { titleFallback: "First Incubation Cohort ", logos: program1Logos },
+                            { titleFallback: "Second Incubation Cohort ", logos: program2Logos },
+                            { titleFallback: "Third Incubation Cohort ", logos: program3Logos }
                         ]}
                     />
                 </Card>
@@ -420,35 +409,7 @@ function Entrepreneurship({
     );
 }
 
-function IconGrid({
-    items,
-    icons
-}: {
-    items: string[];
-    icons: Array<React.ComponentType<{ className?: string }>>;
-}) {
-    if (!items.length) return null;
-
-    return (
-        <div className="grid grid-cols-3 sm:grid-cols-6 gap-3">
-            {items.map((label, idx) => {
-                const Icon = icons[idx] ?? icons[icons.length - 1];
-
-                return (
-                    <div
-                        key={idx}
-                        title={label}
-                        className="group grid place-items-center rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-4"
-                    >
-                        <Icon className="text-2xl" />
-                        <span className="sr-only">{label}</span>
-                    </div>
-                );
-            })}
-        </div>
-    );
-}
-
+/* ------------------------ Cohorts + Logos ------------------------ */
 
 function LogoRail({ logos }: { logos: string[] }) {
     const railRef = useRef<HTMLDivElement | null>(null);
@@ -488,41 +449,20 @@ function LogoRail({ logos }: { logos: string[] }) {
     if (!logos?.length) return <div className="text-sm opacity-70">No logos yet.</div>;
 
     return (
-        <div className="relative w-full min-w-0 overflow-hidden">
-            <div
-                ref={railRef}
-                onPointerDown={onPointerDown}
-                onPointerMove={onPointerMove}
-                onPointerUp={endDrag}
-                onPointerCancel={endDrag}
-                className={[
-
-                    "w-full min-w-0", "shrink-0 snap-start",
-                    "flex gap-3",
-                    "overflow-x-auto overflow-y-hidden",
-                    "cursor-grab select-none touch-pan-x",
-                    "py-1 px-1",
-                    "snap-x snap-mandatory",
-                    "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-                ].join(" ")}
-            >
+        <div className="w-full min-w-0">
+            {/* ✅ Mobile: grid (no horizontal drag/scroll) */}
+            <div className="grid grid-cols-3 gap-3 sm:hidden">
                 {logos.map((src, idx) => (
                     <div
                         key={`${src}-${idx}`}
                         className={[
-                            "shrink-0 snap-start",
-                            "h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24",
+                            "aspect-square",
                             "rounded-2xl",
                             "border border-black/10 dark:border-white/10",
-
-                            // ✅ always white background for logos
                             "bg-white",
-
-                            // optional polish
                             "shadow-sm ring-1 ring-black/5",
-
                             "grid place-items-center",
-                            "p-2 sm:p-3",
+                            "p-2",
                             "overflow-hidden"
                         ].join(" ")}
                     >
@@ -535,6 +475,51 @@ function LogoRail({ logos }: { logos: string[] }) {
                         />
                     </div>
                 ))}
+            </div>
+
+            {/* ✅ sm+: drag/scroll rail */}
+            <div className="hidden sm:block relative w-full min-w-0 overflow-hidden">
+                <div
+                    ref={railRef}
+                    onPointerDown={onPointerDown}
+                    onPointerMove={onPointerMove}
+                    onPointerUp={endDrag}
+                    onPointerCancel={endDrag}
+                    className={[
+                        "w-full min-w-0",
+                        "flex gap-3",
+                        "overflow-x-auto overflow-y-hidden",
+                        "cursor-grab select-none touch-pan-x",
+                        "py-1 px-1",
+                        "snap-x snap-mandatory",
+                        "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                    ].join(" ")}
+                >
+                    {logos.map((src, idx) => (
+                        <div
+                            key={`${src}-${idx}`}
+                            className={[
+                                "shrink-0 snap-start",
+                                "h-16 w-16 sm:h-20 sm:w-20 lg:h-24 lg:w-24",
+                                "rounded-2xl",
+                                "border border-black/10 dark:border-white/10",
+                                "bg-white",
+                                "shadow-sm ring-1 ring-black/5",
+                                "grid place-items-center",
+                                "p-2 sm:p-3",
+                                "overflow-hidden"
+                            ].join(" ")}
+                        >
+                            <img
+                                src={src}
+                                alt={`logo-${idx + 1}`}
+                                loading="lazy"
+                                draggable={false}
+                                className="w-full h-full object-contain max-w-[92%] max-h-[92%]"
+                            />
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     );
@@ -579,9 +564,7 @@ function CohortAccordion({
                         >
                             <div className="flex items-center gap-2 min-w-0">
                                 <span className="truncate">{title}</span>
-                                <span className="shrink-0 text-xs font-medium opacity-70">
-                                    ({count})
-                                </span>
+                                <span className="shrink-0 text-xs font-medium opacity-70">({count})</span>
                             </div>
 
                             <span
@@ -609,6 +592,8 @@ function CohortAccordion({
     );
 }
 
+/* ------------------------ Sectors ------------------------ */
+
 function SectorRail({
     items,
     icons
@@ -619,24 +604,9 @@ function SectorRail({
     if (!items.length) return null;
 
     return (
-        <div
-            className={[
-                "w-full",
-                "overflow-x-auto overflow-y-hidden",
-                "py-1",
-                "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
-            ].join(" ")}
-        >
-            <div
-                className={[
-                    "grid",
-                    "grid-flow-col",
-                    "grid-rows-2", // ✅ two lines
-                    "gap-3",
-                    "auto-cols-[minmax(120px,1fr)]",
-                    "items-stretch"
-                ].join(" ")}
-            >
+        <div className="w-full min-w-0">
+            {/* ✅ Mobile: normal wrap grid */}
+            <div className="grid grid-cols-1 gap-3 sm:hidden">
                 {items.map((label, idx) => {
                     const Icon = icons[idx] ?? icons[icons.length - 1];
 
@@ -644,21 +614,49 @@ function SectorRail({
                         <div
                             key={idx}
                             title={label}
-                            className={[
-                                "rounded-2xl border border-black/10 dark:border-white/10",
-                                "bg-white/60 dark:bg-white/5",
-                                "p-3",
-                                "min-h-[64px]",
-                                "flex items-center gap-3"
-                            ].join(" ")}
+                            className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-3 min-h-[64px] flex items-center gap-3"
                         >
                             <Icon className="text-lg opacity-90 shrink-0" />
-                            <div className="text-sm font-medium opacity-90 truncate">
-                                {label}
-                            </div>
+                            <div className="text-sm font-medium opacity-90 leading-snug">{label}</div>
                         </div>
                     );
                 })}
+            </div>
+
+            {/* ✅ sm+: horizontal rail (2 rows) */}
+            <div
+                className={[
+                    "hidden sm:block w-full",
+                    "overflow-x-auto overflow-y-hidden",
+                    "py-1",
+                    "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+                ].join(" ")}
+            >
+                <div
+                    className={[
+                        "grid",
+                        "grid-flow-col",
+                        "grid-rows-2",
+                        "gap-3",
+                        "auto-cols-[minmax(140px,1fr)]",
+                        "items-stretch"
+                    ].join(" ")}
+                >
+                    {items.map((label, idx) => {
+                        const Icon = icons[idx] ?? icons[icons.length - 1];
+
+                        return (
+                            <div
+                                key={idx}
+                                title={label}
+                                className="rounded-2xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 p-3 min-h-[64px] flex items-center gap-3"
+                            >
+                                <Icon className="text-lg opacity-90 shrink-0" />
+                                <div className="text-sm font-medium opacity-90 truncate">{label}</div>
+                            </div>
+                        );
+                    })}
+                </div>
             </div>
         </div>
     );

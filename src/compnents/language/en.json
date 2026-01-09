@@ -624,9 +624,9 @@
             ],
             "cohortsTitle": "Incubation cohorts",
             "cohorts": [
-                "Incubation Cohort 1",
-                "Incubation Cohort 2",
-                "Incubation Cohort 3"
+                "First Incubation Cohort",
+                "Second Incubation Cohort",
+                "Third Incubation Cohort"
             ],
             "stagesTitle": "Incubation program stages",
             "stages": [

@@ -6,6 +6,7 @@ import gsap from "gsap";
 
 import ToggleSwitch from "../ui/ToggleSwitch";
 import LogoColored from "../../assets/logo/fullColorLogo.svg";
+import LogoWhite from "../../assets/logo/logoWhite.png";
 
 export default function Navbar() {
     const { theme, toggleTheme } = useTheme();
@@ -246,7 +247,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center flex-shrink-0">
                         <img
-                            src={LogoColored}
+                            src={LogoWhite}
                             alt="Core Istanbul Logo"
                             className="h-8 w-auto dark:brightness-110"
                         />

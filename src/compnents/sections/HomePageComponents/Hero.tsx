@@ -3,11 +3,11 @@ import { useTranslation } from "react-i18next";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import HeroPhoto from "../../../assets/display/11.png";
-import HeroPhoto2 from "../../../assets/display/22.png";
-import HeroPhoto3 from "../../../assets/display/33.png";
-import HeroPhoto4 from "../../../assets/display/44.png";
-import HeroPhoto5 from "../../../assets/display/55.png";
+import HeroPhoto from "../../../assets/display/11.webp";
+import HeroPhoto2 from "../../../assets/display/22.webp";
+import HeroPhoto3 from "../../../assets/display/33.webp";
+import HeroPhoto4 from "../../../assets/display/44.webp";
+import HeroPhoto5 from "../../../assets/display/55.webp";
 
 import Vector1 from "../../../assets/icons/PatternCard6 1.svg";
 
@@ -188,7 +188,7 @@ export default function Hero() {
     return (
         <section
             ref={root}
-            className="relative mx-auto w-full px-6 pt-15  min-h-[100dvh] flex items-center"
+            className="relative mx-auto w-full px-6 pt-15 h-[100dvh] flex items-center overflow-hidden"
         >
             <div className="grid md:grid-cols-2 gap-16 items-center w-full">
                 {/* LEFT */}

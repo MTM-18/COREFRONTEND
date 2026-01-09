@@ -4,7 +4,7 @@ import gsap from "gsap";
 
 import incubationImg from "../../../assets/display/6.webp";
 import PurpleOutlinedLogo from "../../../assets/logo/lwhiteLogoPurpleOutline.png";
-import IncubationVector from "../../../assets/icons/PatternCard5 1.svg";
+import IncubationVector from "../../../assets/icons/PatternCard5 2.svg";
 
 export default function EntrepreneurshipIntro() {
     const { t } = useTranslation();
