@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 
-import CoreProLogo from "../../../assets/sections/CorePro2.png";
+import CoreProLogo from "../../../assets/sections/corepro.png";
 import CoreAcademyLogo from "../../../assets/sections/CoreAcademy.png";
 import CoreVenturesLogo from "../../../assets/sections/CoreVenturesLab.png";
 import CorePodcastLogo from "../../../assets/sections/CoreTalk.png";
